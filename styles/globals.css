@@ -1,0 +1,40 @@
+@import url('https://webfontworld.github.io/SCoreDream/SCoreDream.css');
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'SCoreDream', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.inner {
+  width: 100%;
+  padding: 0 25px;
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        color-scheme: dark;
+    }
+
+    body {
+        color: white;
+        background: black;
+    }
+}
