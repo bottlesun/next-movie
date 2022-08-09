@@ -19,11 +19,11 @@ const nextConfig = {
     return [
       {
         source: '/api/movies',  // 들어오는 요청 경로 패턴
-        destination: `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`,
+        destination: `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=ko-KR`,
       },
       {
         source: '/api/movies/:id',
-        destination: `https://api.themoviedb.org/3/movie/:id?api_key=${API_KEY}`,
+        destination: `https://api.themoviedb.org/3/movie/:id?api_key=${API_KEY}&language=ko-KR`,
       },
     ]
   },

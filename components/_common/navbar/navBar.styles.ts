@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import {bgColor} from "../../../styles/variable";
 
 export const NavList = styled.nav`
   display: flex;
@@ -7,8 +8,10 @@ export const NavList = styled.nav`
   height: 100px;
   font-size: 15px;
   color: #fff;
-  background: linear-gradient(#333, 55%, transparent);
+  background: linear-gradient(${bgColor}, 55%, transparent);
   padding: 0 20px;
+  position: absolute;
+  z-index: 999;
 
   .menus {
     width: 100%;
