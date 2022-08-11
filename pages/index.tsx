@@ -11,7 +11,6 @@ export default function Home() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-
         axios.get('/api/movies')
           .then((response) => {
             setMovies(response.data.results)

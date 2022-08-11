@@ -3,7 +3,7 @@ import fetcher from "../../../utils/fetcher";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/autoplay';
-import {SlideComponent} from "./mainSlider.style";
+import {SlideComponent,MoveBg} from "./mainSlider.style";
 import MoviApiDatainterface from "../../../interfaces/movie.interfaces";
 
 const MainSlider = () => {
@@ -16,7 +16,6 @@ const MainSlider = () => {
   const buttonClick = () => {
     console.log('버튼 클릭중')
   }
-
   return (
     <SlideComponent>
       <Swiper
@@ -28,16 +27,18 @@ const MainSlider = () => {
         {
           movieData?.map((movieData: MoviApiDatainterface) => {
             return <SwiperSlide key={movieData.id}>
-              <img src={`${IMG_URL}${movieData.poster_path}`} alt={movieData.title}/>
+              <div className={"movieImages"} style={{backgroundImage : "url(" + `${IMG_URL}${movieData.poster_path}` + ")"}}></div>
               <div className={"movieTitle"} >
-                <h3>{movieData.title}</h3>
-                <p>{movieData.overview}</p>
-                <button onClick={buttonClick}>More</button>
+                <MoveBg style={{backgroundImage : "url(" + `${IMG_URL}${movieData.poster_path}` + ")"}}></MoveBg>
+                <div className={"movieTextBox"}>
+                  <h3>{movieData.title}</h3>
+                  <p>{movieData.overview}</p>
+                  <button onClick={buttonClick}>More</button>
+                </div>
               </div>
             </SwiperSlide>
           })
         }
-
 
       </Swiper>
     </SlideComponent>
