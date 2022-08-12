@@ -15,7 +15,7 @@ export default function Layout({children}: AppLayoutProps) {
   return (
     <div>
       <NavBar/>
-      <div className="container">
+      <div>
           {children}
       </div>
     </div>

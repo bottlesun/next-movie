@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import {bgColor} from "../../../styles/variable";
 
-export const SlideComponent = styled.nav`
+export const SlideComponent = styled.div`
   width: 100%;
   margin-bottom: 50px;
   color: #fff;
@@ -25,15 +25,15 @@ export const SlideComponent = styled.nav`
 
         & :before {
           width: 100%;
-          height: 150px;
+          height: 200px;
           content: "";
           position: absolute;
           bottom: 0;
           left: 0;
-          background: linear-gradient(to top, ${bgColor}, 40%, transparent);
+          background: linear-gradient(to top, ${bgColor}, 45%, transparent);
           z-index: -1;
         }
-        
+
 
         .movieImages {
           width: 100%;
@@ -115,7 +115,7 @@ export const MoveBg = styled.div`
   width: 100%;
   height: 100%;
   background-position: center center;
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
   top: 0;
