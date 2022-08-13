@@ -1,6 +1,6 @@
 import SEO from "../components/_common/seo";
 import MainSlider from "../components/_main/mainSlider";
-import LatestMovie from "../components/_main/latestMovie";
+import UpcomingMovie from "../components/_main/upcomingMovie";
 
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
 
       <div className={'container'}>
         <div className={'inner'}>
-          <LatestMovie/>
+          <UpcomingMovie/>
 
         </div>
       </div>
