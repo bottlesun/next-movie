@@ -25,7 +25,7 @@ const MainSlider = () => {
         autoplay={true}
       >
         {
-          movieData?.results?.slice(0,5)?.map((movieData: MoviApiDatainterface) => {
+          movieData?.slice(0,5)?.map((movieData: MoviApiDatainterface) => {
             return <SwiperSlide key={movieData.id}>
               <div className={"movieImages"}
                    style={{backgroundImage: "url(" + `${IMG_URL}${movieData.poster_path}` + ")"}}></div>
