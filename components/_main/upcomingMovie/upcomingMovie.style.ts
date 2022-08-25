@@ -60,6 +60,7 @@ export const MovieHoverItem = styled.div`
   &.on {
     opacity: 1;
     background-color: #333;
+    padding: 0 10px;
   }
 `
 

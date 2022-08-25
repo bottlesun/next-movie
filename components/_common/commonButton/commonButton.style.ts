@@ -1,0 +1,19 @@
+import styled from '@emotion/styled';
+import {bgColor} from "../../../styles/variable";
+
+export const Button = styled.button`
+  width: 100px;
+  padding: 8px 25px;
+  border: 1px solid #eaeaea;
+  background: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+
+  :hover {
+    background: #fff;
+    color: ${bgColor}
+  }
+
+`

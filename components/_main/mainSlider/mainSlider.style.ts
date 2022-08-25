@@ -5,6 +5,7 @@ export const SlideComponent = styled.div`
   width: 100%;
   margin-bottom: 50px;
   color: #fff;
+  
 
   .swiper {
     height: 100vh;
@@ -88,22 +89,6 @@ export const SlideComponent = styled.div`
               -webkit-line-clamp: 3;
               -webkit-box-orient: vertical;
             }
-
-            & button {
-              width: 100px;
-              padding: 8px 25px;
-              border: 1px solid #eaeaea;
-              background: none;
-              border-radius: 5px;
-              color: #fff;
-              cursor: pointer;
-              transition: 0.3s;
-
-              :hover {
-                background: #fff;
-                color: ${bgColor}
-              }
-            }
           }
         }
       }
@@ -112,7 +97,7 @@ export const SlideComponent = styled.div`
 `;
 
 export const MoveBg = styled.div`
-  width: 100%;
+  width: 300%;
   height: 100%;
   background-position: center center;
   background-size: cover;
@@ -120,6 +105,6 @@ export const MoveBg = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  filter: blur(10px);
+  filter: blur(200px);
   z-index: -1;
 `

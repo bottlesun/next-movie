@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import {SlideComponent, MoveBg} from "./mainSlider.style";
 import MoviApiDatainterface from "../../../interfaces/movie.interfaces";
+import CommonButton from "../../_common/commonButton";
 
 const MainSlider = () => {
   const IMG_URL = 'https://image.tmdb.org/t/p/w500'
@@ -25,7 +26,7 @@ const MainSlider = () => {
         autoplay={true}
       >
         {
-          movieData?.slice(0,5)?.map((movieData: MoviApiDatainterface) => {
+          movieData?.slice(0, 5)?.map((movieData: MoviApiDatainterface) => {
             return <SwiperSlide key={movieData.id}>
               <div className={"movieImages"}
                    style={{backgroundImage: "url(" + `${IMG_URL}${movieData.poster_path}` + ")"}}></div>
@@ -34,7 +35,7 @@ const MainSlider = () => {
                 <div className={"movieTextBox"}>
                   <h3>{movieData.title}</h3>
                   <p>{movieData.overview}</p>
-                  <button onClick={buttonClick}>More</button>
+                  <CommonButton disabled={undefined} onClick={buttonClick} >{'More'}</CommonButton>
                 </div>
               </div>
             </SwiperSlide>
