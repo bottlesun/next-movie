@@ -8,7 +8,7 @@ import fetcher from "../utils/fetcher";
 
 
 export default function Home({fallback}:InferGetServerSidePropsType< typeof getStaticProps>) {
-
+console.log(fallback)
   return (
     <SWRConfig value={fallback}>
 
@@ -26,13 +26,16 @@ export default function Home({fallback}:InferGetServerSidePropsType< typeof getS
 
 export const getStaticProps : GetServerSideProps = async() =>{
   const article = await axios.get('http://localhost:3000/api/movies')
+
     .then((response) => response.data.results)
     .catch((error) => console.dir(error))
 
   return {
     props: {
       fallback: {
-        '/api/movie/': article
+        [unstable_serialize(['/api/movie/', 'article', 1])]: article,
+        [unstable_serialize(['/api/contents/:id', 'article', 2])]: article,
+
       }
     }
   }

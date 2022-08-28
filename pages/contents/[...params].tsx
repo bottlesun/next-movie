@@ -8,17 +8,13 @@ type MovieDetailParams = [string, string] | [];
 
 
 const Contents = ({params}: InferGetServerSidePropsType< typeof getServerSideProps>) => {
-
-  const [id] = (params || []) as MovieDetailParams;
-  const {data: ContentData} = useSWR(`/api/contents/${id}`, fetcher, {
-    dedupingInterval: 2000,
-  })
-
-  console.log(ContentData)
+console.log(params)
+  const [title,id] = (params || []) as MovieDetailParams;
+  const { data:contentsData } = useSWR([`/api/contents/${id}`, 'article', 2], fetcher)
   return (
     <div>
-      <SEO title={'ContentData'}/>
-      <ContentExplanation {...ContentData}/>
+      <SEO title={title as string}/>
+      <ContentExplanation />
     </div>
   )
 }

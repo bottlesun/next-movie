@@ -5,6 +5,7 @@ import {useState} from "react";
 import SliderMainItem from "./sliderMainItem";
 
 const UpcomingMovie = () => {
+
   return (
     <MovieList>
       <h3 className={'movieListTitle'}>Best Movie</h3>
