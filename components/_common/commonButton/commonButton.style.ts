@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import {bgColor} from "../../../styles/variable";
 
-export const Button = styled.button`
+export const Button = styled.a`
   width: 100px;
   padding: 8px 25px;
   border: 1px solid #eaeaea;
@@ -10,6 +10,7 @@ export const Button = styled.button`
   color: #fff;
   cursor: pointer;
   transition: 0.3s;
+  display:block;
 
   :hover {
     background: #fff;

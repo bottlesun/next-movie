@@ -5,12 +5,12 @@ const API_KEY = process.env.API_KEY;
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  async redirects(){
-    return[
+  async redirects() {
+    return [
       {
-        source : '/old-blog/:path*',
-        destination : '/new-blog/:path*',
-        permanent : false ,
+        source: '/old-blog/:path*',
+        destination: '/new-blog/:path*',
+        permanent: false,
       }
     ]
   },
@@ -26,7 +26,7 @@ const nextConfig = {
         destination: `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=ko-KR`,
       },
       {
-        source: '/api/movies/:id',
+        source: '/api/contents/:id',
         destination: `https://api.themoviedb.org/3/movie/:id?api_key=${API_KEY}&language=ko-KR`,
       },
     ]

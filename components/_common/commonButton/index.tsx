@@ -1,9 +1,14 @@
 import {Button} from "./commonButton.style";
 import commonButton from "../../../interfaces/commonButton.interfaces";
+import Link from "next/link";
 
-const CommonButton = ({disabled,children,onClick} : commonButton) => {
+const CommonButton = ({children,href} : commonButton) => {
   return (
-    <Button disabled={disabled} onClick={onClick}>{children}</Button>
+    <Link href={`${href}`}>
+      <Button>
+          {children}
+      </Button>
+    </Link>
   )
 }
 
