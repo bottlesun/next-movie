@@ -13,6 +13,7 @@ const SliderMainItem = memo(() => {
     dedupingInterval: 2000,
   });
 
+
   const [movieItemHover, setMovieItemHover] = useState("");
 
   return (
@@ -21,7 +22,7 @@ const SliderMainItem = memo(() => {
       slidesPerView={6}
     >
       {
-        upcomingData?.map((movie: MovieApiDataInterface) => {
+        upcomingData?.results?.map((movie: MovieApiDataInterface) => {
           return <SwiperSlide
             key={movie.id}
             onMouseEnter={() => setMovieItemHover(`${movie.id}`)}

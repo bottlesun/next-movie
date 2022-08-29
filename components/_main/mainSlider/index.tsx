@@ -1,7 +1,7 @@
 import useSWR from 'swr'
 import fetcher from "../../../utils/fetcher";
 import {Swiper, SwiperSlide} from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from "swiper";
+import {Autoplay} from "swiper";
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import {SlideComponent, MoveBg} from "./mainSlider.style";
@@ -16,9 +16,8 @@ const MainSlider = () => {
   const {data: movieData} = useSWR('/api/movies/', fetcher, {
     dedupingInterval: 2000,
   })
+  const buttonClick = ({id}: any) => {
 
-
-  const buttonClick = (id: any) => {
     router.push(`/contents/${id}`);
   }
 
@@ -36,7 +35,7 @@ const MainSlider = () => {
         modules={[Autoplay]}
       >
         {
-          movieData?.slice(0, 5)?.map((movieData: MoviApiDatainterface) => {
+          movieData?.results?.slice(0, 5)?.map((movieData: MoviApiDatainterface) => {
             return <SwiperSlide key={movieData.id}>
               <div className={"movieImages"}
                    style={{backgroundImage: "url(" + `${IMG_URL}${movieData.poster_path}` + ")"}}></div>
@@ -46,7 +45,7 @@ const MainSlider = () => {
                   <h3>{movieData.title}</h3>
                   <p>{movieData.overview}</p>
                   <Link href={`/contents/${movieData.id}`}>
-                    <Button  onClick={buttonClick}>
+                    <Button onClick={buttonClick}>
                       {'More'}
                     </Button>
                   </Link>
