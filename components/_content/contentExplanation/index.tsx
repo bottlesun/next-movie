@@ -1,12 +1,14 @@
-import useSWR from "swr";
-import fetcher from "../../../utils/fetcher";
+import {ContentExplanationWrap} from "./contentExplanation.style";
+
 
 const contentExplanation = ({...contentsData}) => {
   console.log(contentsData)
   return (
-    <div>
-      {contentsData.overview}
-    </div>
+    <ContentExplanationWrap>
+      <div id="ContentExplanation">
+        {contentsData.overview}
+      </div>
+    </ContentExplanationWrap>
   )
 }
 

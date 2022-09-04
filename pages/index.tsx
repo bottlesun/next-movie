@@ -1,7 +1,6 @@
 import SEO from "../components/_common/seo";
 import MainSlider from "../components/_main/mainSlider";
 import UpcomingMovie from "../components/_main/upcomingMovie";
-import axios from "axios";
 import { GetServerSideProps , InferGetServerSidePropsType } from 'next'
 import useSWR,{SWRConfig, unstable_serialize} from "swr";
 import fetcher from "../utils/fetcher";
@@ -32,7 +31,6 @@ export const getStaticProps : GetServerSideProps = async() =>{
       fallback: {
         [unstable_serialize(['/api/movie/', 'article', 1])]: movieData,
         [unstable_serialize(['/api/contents/:id', 'article', 2])]: movieData,
-
       }
     }
   }

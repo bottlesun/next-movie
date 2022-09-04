@@ -11,6 +11,7 @@ export const Button = styled.a`
   cursor: pointer;
   transition: 0.3s;
   display:block;
+  text-align:center;
 
   :hover {
     background: #fff;

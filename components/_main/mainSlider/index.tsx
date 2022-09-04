@@ -16,10 +16,7 @@ const MainSlider = () => {
   const {data: movieData} = useSWR('/api/movies/', fetcher, {
     dedupingInterval: 2000,
   })
-  const buttonClick = ({id}: any) => {
 
-    router.push(`/contents/${id}`);
-  }
 
   return (
     <SlideComponent>
@@ -29,7 +26,7 @@ const MainSlider = () => {
         loop={true}
         centeredSlides={true}
         autoplay={{
-          delay: 3500,
+          delay: 5500,
           disableOnInteraction: false,
         }}
         modules={[Autoplay]}
@@ -45,7 +42,7 @@ const MainSlider = () => {
                   <h3>{movieData.title}</h3>
                   <p>{movieData.overview}</p>
                   <Link href={`/contents/${movieData.id}`}>
-                    <Button onClick={buttonClick}>
+                    <Button>
                       {'More'}
                     </Button>
                   </Link>
