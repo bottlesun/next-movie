@@ -1,7 +1,5 @@
-import {MovieList, MovieItems, MovieHoverItem, MovieItemTitleBox} from "./upcomingMovie.style";
-import useSWR from 'swr'
-import fetcher from "../../../utils/fetcher";
-import {useState} from "react";
+import {MovieList} from "./upcomingMovie.style";
+
 import SliderMainItem from "./sliderMainItem";
 
 const UpcomingMovie = () => {

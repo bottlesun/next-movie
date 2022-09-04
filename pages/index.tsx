@@ -2,7 +2,7 @@ import SEO from "../components/_common/seo";
 import MainSlider from "../components/_main/mainSlider";
 import UpcomingMovie from "../components/_main/upcomingMovie";
 import { GetServerSideProps , InferGetServerSidePropsType } from 'next'
-import useSWR,{SWRConfig, unstable_serialize} from "swr";
+import {SWRConfig, unstable_serialize} from "swr";
 import fetcher from "../utils/fetcher";
 
 

@@ -5,7 +5,7 @@ import fetcher from "../../utils/fetcher";
 import {InferGetServerSidePropsType, GetServerSidePropsContext} from 'next'
 
 
-type MovieDetailParams = [string, string] | [];
+export type MovieDetailParams = [string, string] | [];
 
 
 const Contents = ({params}: InferGetServerSidePropsType<typeof getServerSideProps>) => {

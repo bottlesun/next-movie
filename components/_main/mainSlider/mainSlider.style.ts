@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import {bgColor} from "../../../styles/variable";
+import {mainBgColor  ,bgColor} from "../../../styles/variable";
 
 export const SlideComponent = styled.div`
   width: 100%;
@@ -31,7 +31,7 @@ export const SlideComponent = styled.div`
           position: absolute;
           bottom: 0;
           left: 0;
-          background: linear-gradient(to top, ${bgColor}, 45%, transparent);
+          background: linear-gradient(to top, ${mainBgColor}, 45%, transparent);
           z-index: -1;
         }
 
@@ -62,7 +62,7 @@ export const SlideComponent = styled.div`
             position: absolute;
             bottom: 0;
             left: 0;
-            background: linear-gradient(to top, ${bgColor}, 40%, transparent);
+            background: linear-gradient(to top, ${mainBgColor}, 5%, transparent);
             z-index: -1;
           }
 
