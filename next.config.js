@@ -29,6 +29,10 @@ const nextConfig = {
         source: '/api/contents/:id',
         destination: `https://api.themoviedb.org/3/movie/:id?api_key=${API_KEY}&language=ko-KR`,
       },
+      {
+        source: '/api/contents/:id/similar',
+        destination: `https://api.themoviedb.org/3/movie/:id/similar?api_key=${API_KEY}&language=ko-KR`,
+      },
     ]
   },
 }

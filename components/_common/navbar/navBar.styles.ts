@@ -22,7 +22,7 @@ export const NavList = styled.nav`
 
     h3 {
       width: 150px;
-      font-size: 2rem;
+      font-size: 3rem;
       letter-spacing: 2px;
       cursor: pointer;
       margin: 0 10px;
@@ -30,7 +30,7 @@ export const NavList = styled.nav`
 
     a {
       margin: 10px;
-      font-size: 16px;
+      font-size: 1.5rem;
       color: rgba(255, 255, 255, 0.7);
 
       :hover {

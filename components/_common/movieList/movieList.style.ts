@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 
 
-export const MovieList = styled.section`
+export const MovieListComponent = styled.section`
   width: 100%;
   height: 100%;
-  padding: 30px 0;
+  padding: 0 0 20px;
 
   .swiper {
     overflow: visible;
@@ -47,7 +47,7 @@ export const MovieHoverItem = styled.div`
   left: 0;
   opacity: 0;
   padding: 5px;
-  font-size: 10px;
+  font-size: 1rem;
   
   p{
     overflow: hidden;
@@ -56,6 +56,7 @@ export const MovieHoverItem = styled.div`
     display:-webkit-box;
     -webkit-line-clamp:12;
     -webkit-box-orient:vertical;
+    font-size: 1.1rem;
   }
   &.on {
     opacity: 1;
@@ -71,14 +72,14 @@ export const MovieItemTitleBox = styled.div`
     overflow: hidden;
     text-overflow: ellipsis;
     margin: 5px 0;
-    font-size: 14px;
+    font-size:1.4rem;
     font-weight: 500;
   }
   
   span {
     display: block;
     width: 100%;
-    font-size: 10px;
+    font-size: 1rem;
     text-align: right;
     transition: 0.3s;
     color: rgba(255, 255, 255, 0.5);

@@ -1,9 +1,9 @@
 import SEO from "../components/_common/seo";
 import MainSlider from "../components/_main/mainSlider";
-import UpcomingMovie from "../components/_main/upcomingMovie";
 import { GetServerSideProps , InferGetServerSidePropsType } from 'next'
 import {SWRConfig, unstable_serialize} from "swr";
 import fetcher from "../utils/fetcher";
+import MovieList from "../components/_common/movieList";
 
 
 export default function Home({fallback}:InferGetServerSidePropsType< typeof getStaticProps>) {
@@ -16,7 +16,7 @@ export default function Home({fallback}:InferGetServerSidePropsType< typeof getS
 
       <div className={'container'}>
         <div className={'inner'}>
-          <UpcomingMovie/>
+          <MovieList title={'Best Movie'} dataUrl={'/api/movies/upcoming'}/>
         </div>
       </div>
     </SWRConfig>

@@ -1,15 +1,18 @@
 import {Swiper, SwiperSlide} from "swiper/react";
-import MovieApiDataInterface from "../../../../interfaces/movie.interfaces";
-import {MovieHoverItem, MovieItems, MovieItemTitleBox} from "../upcomingMovie.style";
+import {MovieHoverItem, MovieItems, MovieItemTitleBox} from "../movieList.style";
 import useSWR from "swr";
 import fetcher from "../../../../utils/fetcher";
 import "swiper/css";
-import {useState,memo} from "react";
+import {useState, memo} from "react";
 
-const SliderMainItem = memo(() => {
+interface SliderMethod {
+  dataUrl: string | undefined | null
+}
+
+const SliderItem = memo(({dataUrl}: SliderMethod) => {
 
   const IMG_URL = 'https://image.tmdb.org/t/p/w500'
-  const {data: upcomingData} = useSWR('/api/movies/upcoming', fetcher, {
+  const {data: Data} = useSWR(dataUrl, fetcher, {
     dedupingInterval: 2000,
   });
 
@@ -22,7 +25,7 @@ const SliderMainItem = memo(() => {
       slidesPerView={6}
     >
       {
-        upcomingData?.results?.map((movie: MovieApiDataInterface) => {
+        Data?.results?.map((movie: any ) => {
           return <SwiperSlide
             key={movie.id}
             onMouseEnter={() => setMovieItemHover(`${movie.id}`)}
@@ -51,4 +54,4 @@ const SliderMainItem = memo(() => {
   )
 });
 
-export default SliderMainItem
+export default SliderItem

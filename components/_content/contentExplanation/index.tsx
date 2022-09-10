@@ -3,10 +3,10 @@ import {BG, ContentExplanationWrap, Contents} from "./contentExplanation.style";
 
 type genres = {
   id : number | null | undefined
-  name: string | undefined | null
+  name: string | null | undefined
 }
 
-const contentExplanation = ({...contentsData}) => {
+const ContentExplanation = ({...contentsData}) => {
   console.log(contentsData)
   const IMG_URL = 'https://image.tmdb.org/t/p/w500' + contentsData.poster_path;
   return (
@@ -35,4 +35,4 @@ const contentExplanation = ({...contentsData}) => {
   )
 }
 
-export default contentExplanation
+export default ContentExplanation

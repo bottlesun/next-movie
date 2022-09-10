@@ -12,7 +12,7 @@ export const ContentExplanationWrap = styled.section`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 100px 50px 50px;
+    padding: 100px 20px 50px;
 
     img {
       width: 280px;
@@ -39,13 +39,15 @@ export const Contents = styled.div`
   width: 450px;
 
   h2 {
-    font-size: 35px;
+    font-size: 30px;
     margin-bottom: 20px;
   }
 
   p {
     color: #ebebeb;
     margin-top: 25px;
+    font-size: 14px;
+    line-height: 1.5em;
   }
 
   .genres{
