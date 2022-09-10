@@ -26,12 +26,24 @@ const nextConfig = {
         destination: `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=ko-KR`,
       },
       {
-        source: '/api/contents/:id',
+        source: '/api/contents/movie/:id',
         destination: `https://api.themoviedb.org/3/movie/:id?api_key=${API_KEY}&language=ko-KR`,
       },
       {
-        source: '/api/contents/:id/similar',
+        source: '/api/contents/movie/:id/similar',
         destination: `https://api.themoviedb.org/3/movie/:id/similar?api_key=${API_KEY}&language=ko-KR`,
+      },
+      {
+        source: '/api/tv',
+        destination: `https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&language=ko-KR`,
+      },
+      {
+        source: '/api/contents/tv/:id',
+        destination: `https://api.themoviedb.org/3/tv/:id?api_key=${API_KEY}&language=ko-KR`,
+      },
+      {
+        source: '/api/contents/tv/:id/similar',
+        destination: `https://api.themoviedb.org/3/tv/:id/similar?api_key=${API_KEY}&language=ko-KR`,
       },
     ]
   },

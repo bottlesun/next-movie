@@ -73,6 +73,7 @@ export const SlideComponent = styled.div`
             padding: 10% 0;
 
             & h3 {
+              font-size: 2rem;
               margin-bottom: 5px;
               white-space: nowrap;
               text-overflow: ellipsis;

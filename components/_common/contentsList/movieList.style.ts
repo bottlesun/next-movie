@@ -23,6 +23,7 @@ export const MovieItems = styled.div`
   position: relative;
   transition: 0.3s;
   top: 0;
+  cursor: pointer;
 
   &:hover {
     top: -10px;
@@ -36,34 +37,8 @@ export const MovieItems = styled.div`
     min-height: 200px;
     object-fit: cover;
   }
-
 `
 
-export const MovieHoverItem = styled.div`
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  padding: 5px;
-  font-size: 1rem;
-  
-  p{
-    overflow: hidden;
-    white-space: normal;
-    text-overflow : ellipsis;
-    display:-webkit-box;
-    -webkit-line-clamp:12;
-    -webkit-box-orient:vertical;
-    font-size: 1.1rem;
-  }
-  &.on {
-    opacity: 1;
-    background-color: #333;
-    padding: 0 10px;
-  }
-`
 
 export const MovieItemTitleBox = styled.div`
   .movieName {

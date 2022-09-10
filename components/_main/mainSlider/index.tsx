@@ -11,7 +11,6 @@ import Link from "next/link";
 import {Button} from "../../_common/commonButton/commonButton.style";
 
 const MainSlider = () => {
-  const router = useRouter();
   const IMG_URL = 'https://image.tmdb.org/t/p/w500'
   const {data: movieData} = useSWR('/api/movies/', fetcher, {
     dedupingInterval: 2000,
@@ -41,7 +40,7 @@ const MainSlider = () => {
                 <div className={"movieTextBox"}>
                   <h3>{movieData.title}</h3>
                   <p>{movieData.overview}</p>
-                  <Link href={`/contents/${movieData.id}`}>
+                  <Link href={`/contents/movies/${movieData.id}`}>
                     <Button>
                       {'More'}
                     </Button>

@@ -3,7 +3,8 @@ import MainSlider from "../components/_main/mainSlider";
 import { GetServerSideProps , InferGetServerSidePropsType } from 'next'
 import {SWRConfig, unstable_serialize} from "swr";
 import fetcher from "../utils/fetcher";
-import MovieList from "../components/_common/movieList";
+import ContentsList from "../components/_common/contentsList";
+import Footer from "../components/_common/footer";
 
 
 export default function Home({fallback}:InferGetServerSidePropsType< typeof getStaticProps>) {
@@ -16,21 +17,25 @@ export default function Home({fallback}:InferGetServerSidePropsType< typeof getS
 
       <div className={'container'}>
         <div className={'inner'}>
-          <MovieList title={'Best Movie'} dataUrl={'/api/movies/upcoming'}/>
+          <ContentsList title={'Best Movie'} dataUrl={'/api/movies/upcoming'} contentsType={'movie'}/>
+          <ContentsList title={'Best TV show'} dataUrl={'/api/tv'} contentsType={'tv'}/>
         </div>
       </div>
+      <Footer/>
     </SWRConfig>
   )
 }
 
 export const getStaticProps : GetServerSideProps = async() =>{
   const movieData = await fetcher('http://localhost:3000/api/movies');
+  const tvData = await  fetcher('http://localhost:3000/api/tv')
 
   return {
     props: {
       fallback: {
         [unstable_serialize(['/api/movie/', 'article', 1])]: movieData,
         [unstable_serialize(['/api/contents/:id', 'article', 2])]: movieData,
+        [unstable_serialize(['/api/tv', 'article', 3])]: tvData,
       }
     }
   }

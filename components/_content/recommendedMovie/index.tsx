@@ -1,15 +1,16 @@
 import {RecommendedWrap} from "./recommendedMovie.style";
-import MovieList from "../../_common/movieList";
+import ContentsList from "../../_common/contentsList";
 
-interface id {
+interface RecommendedMovie {
   id: string | null | undefined
+  value : string | null | undefined
 }
 
-const RecommendedMovie = ({id}: id) => {
+const RecommendedMovie = ({ value , id}: RecommendedMovie) => {
 
   return (
     <RecommendedWrap>
-      <MovieList title={'Similar Movie'} dataUrl={`/api/contents/${id}/similar`}/>
+      <ContentsList title={`Similar ${value}`} dataUrl={`/api/contents/${value}/${id}/similar`} contentsType={value}/>
     </RecommendedWrap>
   )
 }

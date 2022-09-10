@@ -1,20 +1,22 @@
 import { MovieListComponent} from "./movieList.style";
-import SliderItem from "../../_common/movieList/sliderItem";
+import SliderItem from "./sliderItem";
 
 export interface movieList {
   title : string | undefined | null
   dataUrl: string | undefined | null
-
+  contentsType : string | undefined | null
 }
 
-const MovieList = ({title , dataUrl} : movieList) => {
+const ContentsList = ({title , dataUrl, contentsType} : movieList) => {
 
   return (
     <MovieListComponent>
       <h3 className={'movieListTitle'}>{title}</h3>
-      <SliderItem dataUrl={dataUrl}  />
+
+         <SliderItem dataUrl={dataUrl} contentsType={contentsType}  />
+
     </MovieListComponent>
   )
 }
 
-export default MovieList;
+export default ContentsList;

@@ -3,5 +3,4 @@ import {boxShadow} from "../../../styles/variable";
 
 export const RecommendedWrap = styled.section`
   padding: 0 25px;
-  color: #fff;
 `
