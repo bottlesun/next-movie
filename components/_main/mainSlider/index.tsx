@@ -6,7 +6,6 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import {SlideComponent, MoveBg} from "./mainSlider.style";
 import MoviApiDatainterface from "../../../interfaces/movie.interfaces";
-import {useRouter} from "next/router";
 import Link from "next/link";
 import {Button} from "../../_common/commonButton/commonButton.style";
 

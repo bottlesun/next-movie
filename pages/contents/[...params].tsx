@@ -14,7 +14,6 @@ export type MovieDetailParams = [string, string] | [];
 const Contents = ({params}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const [value,id] = (params || []) as MovieDetailParams;
 
-  console.log(params)
   const {data: contentsData} = useSWR(`/api/contents/${value}/${id}`, fetcher, {
     dedupingInterval: 2000,
   })

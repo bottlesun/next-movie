@@ -17,7 +17,7 @@ export default function Home({fallback}:InferGetServerSidePropsType< typeof getS
 
       <div className={'container'}>
         <div className={'inner'}>
-          <ContentsList title={'Best Movie'} dataUrl={'/api/movies/upcoming'} contentsType={'movie'}/>
+          <ContentsList title={'Best Movie'} dataUrl={'/api/movies/upcoming'} contentsType={'movies'}/>
           <ContentsList title={'Best TV show'} dataUrl={'/api/tv'} contentsType={'tv'}/>
         </div>
       </div>
@@ -33,7 +33,7 @@ export const getStaticProps : GetServerSideProps = async() =>{
   return {
     props: {
       fallback: {
-        [unstable_serialize(['/api/movie/', 'article', 1])]: movieData,
+        [unstable_serialize(['/api/movies/', 'article', 1])]: movieData,
         [unstable_serialize(['/api/contents/:id', 'article', 2])]: movieData,
         [unstable_serialize(['/api/tv', 'article', 3])]: tvData,
       }
