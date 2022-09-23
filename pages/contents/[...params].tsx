@@ -18,12 +18,11 @@ const Contents = ({params}: InferGetServerSidePropsType<typeof getServerSideProp
     dedupingInterval: 2000,
   })
 
-  console.log(contentsData)
 
   return (
     <div>
       <SEO title={contentsData?.title}/>
-      <ContentExplanation {...contentsData}/>
+      <ContentExplanation {...contentsData}  id={id} value={value}/>
       <hr className={'line'}/>
       <RecommendedMovie id={id} value={value}/>
       <Footer/>

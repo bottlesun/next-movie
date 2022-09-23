@@ -26,13 +26,26 @@ const nextConfig = {
         destination: `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=ko-KR`,
       },
       {
+        source: '/api/:value/upcoming',
+        destination: `https://api.themoviedb.org/3/:value/upcoming?api_key=${API_KEY}&language=ko-KR`,
+      },
+      {
+        source: '/api/:value/nowPlaying',
+        destination: `https://api.themoviedb.org/3/:value/now_playing?api_key=${API_KEY}&language=ko-KR`,
+      },
+      {
         source: '/api/tv',
         destination: `https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&language=ko-KR`,
       },
       {
-        source: '/api/:value/upcoming',
-        destination: `https://api.themoviedb.org/3/:value/upcoming?api_key=${API_KEY}&language=ko-KR`,
+        source: '/api/tv/onAir',
+        destination: `https://api.themoviedb.org/3/tv/on_the_air?api_key=${API_KEY}&language=ko-KR`,
       },
+      {
+        source: '/api/:value/topRated',
+        destination: `https://api.themoviedb.org/3/:value/top_rated?api_key=${API_KEY}&language=ko-KR`,
+      },
+
       {
         source: '/api/contents/:value/:id',
         destination: `https://api.themoviedb.org/3/:value/:id?api_key=${API_KEY}&language=ko-KR`,
@@ -41,10 +54,7 @@ const nextConfig = {
         source: '/api/contents/:value/:id/similar',
         destination: `https://api.themoviedb.org/3/:value/:id/similar?api_key=${API_KEY}&language=ko-KR`,
       },
-      {
-        source: '/api/contents/:id/images',  // 들어오는 요청 경로 패턴
-        destination: `https://api.themoviedb.org/3/:value/:id/images?api_key=${API_KEY}&language=ko-KR`,
-      },
+
     ]
   },
 }

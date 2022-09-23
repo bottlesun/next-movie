@@ -13,7 +13,10 @@ const Movie = () => {
       <div className={'container'}>
           <div className={'inner'}>
             <ContentsList title={'Best Movie'} dataUrl={'/api/movies'} contentsType={'movie'}/>
-            <ContentsList title={'Upcoming Movie'} dataUrl={`/api/movie/upcoming`} contentsType={'movie'}/>
+            <ContentsList title={'현재 상영 영화'} dataUrl={`/api/movie/nowPlaying`} contentsType={'movie'}/>
+            <ContentsList title={'평점이 높은 영화'} dataUrl={`/api/movie/topRated`} contentsType={'movie'}/>
+            <ContentsList title={'개봉 예정 영화'} dataUrl={`/api/movie/upcoming`} contentsType={'movie'}/>
+
           </div>
       </div>
     </MovieComponent>

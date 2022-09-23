@@ -13,7 +13,6 @@ const Navigation = () => {
         <Link href="/"><h3>MOVING</h3></Link>
         <Link href="/tv"><a className={router.pathname === '/tv' ? 'active' : ''}>TV 프로그램</a></Link>
         <Link href="/movie"><a className={router.pathname === '/movie' ? 'active' : ''}>영화</a></Link>
-        <Link href="/choice"><a className={router.pathname === '/choice' ? 'active' : ''}>추천 컨텐츠</a></Link>
       </div>
 
       <div className="user_info">

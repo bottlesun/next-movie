@@ -7,7 +7,10 @@ type genres = {
   name: string | null | undefined
 }
 
-const ContentExplanation = ({...contentsData}) => {
+
+
+const ContentExplanation = ({...contentsData}  ) => {
+
   const IMG_URL = 'https://image.tmdb.org/t/p/w500' + contentsData.poster_path;
   return (
 

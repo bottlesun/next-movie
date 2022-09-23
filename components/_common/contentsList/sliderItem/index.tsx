@@ -18,9 +18,7 @@ const SliderItem = memo(({dataUrl, contentsType}: SliderMethod) => {
   const {data: Data} = useSWR(dataUrl, fetcher, {
     dedupingInterval: 2000,
   });
-  const {data: ImageData} = useSWR(`${dataUrl}/images`, fetcher, {
-    dedupingInterval: 2000,
-  });
+
   const [movieItemHover, setMovieItemHover] = useState("");
 
   return (

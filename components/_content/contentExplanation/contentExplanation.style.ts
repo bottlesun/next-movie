@@ -10,7 +10,7 @@ export const ContentExplanationWrap = styled.section`
 
   #ContentExplanation {
     display: flex;
-    max-width: 1000px;
+    max-width: 1300px;
     min-width: 30px;
     margin: 0 auto;
     justify-content: space-between;
@@ -39,14 +39,14 @@ export const BG = styled.article`
 `
 
 export const Contents = styled.div`
-  max-width: 400px;
-
+  max-width: 600px;
   h2 {
     font-size: 30px;
     margin-bottom: 20px;
   }
 
   p {
+    max-width: 400px;
     color: #ebebeb;
     margin-top: 25px;
     font-size: 14px;
@@ -71,10 +71,11 @@ export const Contents = styled.div`
 `
 
 export const TitleBox = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  h2{
+    margin-bottom: 0;
+  }
   p{
+    margin: 0px 0 20px;
     font-size: 12px;
     color:rgba(255, 255, 255, 0.7)
   }
