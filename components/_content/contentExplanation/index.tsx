@@ -1,8 +1,9 @@
-import {BG, ContentExplanationWrap, Contents} from "./contentExplanation.style";
+import Image from "next/image";
+import {BG, ContentExplanationWrap, Contents, TitleBox} from "./contentExplanation.style";
 
 
 type genres = {
-  id : number | null | undefined
+  id: number | null | undefined
   name: string | null | undefined
 }
 
@@ -15,11 +16,19 @@ const ContentExplanation = ({...contentsData}) => {
       <div className="inner">
         <div id="ContentExplanation">
           <Contents>
-            <h2>{contentsData.title || contentsData.name}</h2>
+            <TitleBox>
+              <h2>{contentsData.title || contentsData.name} </h2>
+              <p>{contentsData.release_date || contentsData.first_air_date}
+                {
+                  contentsData.release_date ? ' 개봉' : ' 방영일'
+                }
+              </p>
+            </TitleBox>
+
             <div className="genres">
               {
-                contentsData.genres?.map( (genres : genres ) => {
-                  return  <span key={genres.id} > {genres?.name} </span>
+                contentsData.genres?.map((genres: genres) => {
+                  return <span key={genres.id}> {genres?.name} </span>
                 })
               }
             </div>
@@ -27,7 +36,7 @@ const ContentExplanation = ({...contentsData}) => {
               {contentsData.overview}
             </p>
           </Contents>
-          <img src={IMG_URL} alt={contentsData.title}/>
+          <Image src={IMG_URL} alt={contentsData.title} width={280} height={350}/>
         </div>
       </div>
     </ContentExplanationWrap>

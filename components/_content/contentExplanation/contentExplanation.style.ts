@@ -10,13 +10,16 @@ export const ContentExplanationWrap = styled.section`
 
   #ContentExplanation {
     display: flex;
+    max-width: 1000px;
+    min-width: 30px;
+    margin: 0 auto;
     justify-content: space-between;
     align-items: center;
     padding: 100px 20px 50px;
 
     img {
-      width: 280px;
-      height: auto;
+      min-width: 280px!important;
+      min-height: 350px!important;
       object-fit: contain;
       box-shadow: ${boxShadow};
     }
@@ -36,7 +39,7 @@ export const BG = styled.article`
 `
 
 export const Contents = styled.div`
-  width: 450px;
+  max-width: 400px;
 
   h2 {
     font-size: 30px;
@@ -50,11 +53,11 @@ export const Contents = styled.div`
     line-height: 1.5em;
   }
 
-  .genres{
+  .genres {
     display: flex;
     justify-content: start;
     gap: 10px;
-    
+
     span {
       color: #ebebeb;
       border: 1px solid #ebebeb;
@@ -63,6 +66,17 @@ export const Contents = styled.div`
       border-radius: 3px;
       cursor: default;
       box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
-    } 
+    }
   }
 `
+
+export const TitleBox = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  p{
+    font-size: 12px;
+    color:rgba(255, 255, 255, 0.7)
+  }
+`
+

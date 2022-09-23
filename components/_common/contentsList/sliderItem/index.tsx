@@ -5,6 +5,7 @@ import fetcher from "../../../../utils/fetcher";
 import "swiper/css";
 import {useState, memo} from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export interface SliderMethod {
   dataUrl: string | undefined | null
@@ -12,9 +13,12 @@ export interface SliderMethod {
 }
 
 const SliderItem = memo(({dataUrl, contentsType}: SliderMethod) => {
-
   const IMG_URL = 'https://image.tmdb.org/t/p/w500'
+
   const {data: Data} = useSWR(dataUrl, fetcher, {
+    dedupingInterval: 2000,
+  });
+  const {data: ImageData} = useSWR(`${dataUrl}/images`, fetcher, {
     dedupingInterval: 2000,
   });
   const [movieItemHover, setMovieItemHover] = useState("");
@@ -30,11 +34,12 @@ const SliderItem = memo(({dataUrl, contentsType}: SliderMethod) => {
             key={item.id}
             onMouseEnter={() => setMovieItemHover(`${item.id}`)}
             onMouseLeave={() => setMovieItemHover("")}
+            className={'movieItemComponent'}
           >
 
             <Link href={`/contents/${contentsType}/${item.id}`}>
               <MovieItems className={`${movieItemHover !== '' ? 'on' : ''}`}>
-                <img src={`${IMG_URL}${item.poster_path }`} alt={item.title}/>
+                <Image src={`${IMG_URL}${item.poster_path }`} alt={item.title} width={280} height={350} />
               </MovieItems>
             </Link>
             {contentsType === 'tv' ?
@@ -53,5 +58,6 @@ const SliderItem = memo(({dataUrl, contentsType}: SliderMethod) => {
     </Swiper>
   )
 });
+SliderItem.displayName = 'SliderItem';
 
 export default SliderItem

@@ -12,9 +12,7 @@ const ContentsList = ({title , dataUrl, contentsType} : movieList) => {
   return (
     <MovieListComponent>
       <h3 className={'movieListTitle'}>{title}</h3>
-
          <SliderItem dataUrl={dataUrl} contentsType={contentsType}  />
-
     </MovieListComponent>
   )
 }

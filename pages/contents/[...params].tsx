@@ -18,6 +18,7 @@ const Contents = ({params}: InferGetServerSidePropsType<typeof getServerSideProp
     dedupingInterval: 2000,
   })
 
+  console.log(contentsData)
 
   return (
     <div>

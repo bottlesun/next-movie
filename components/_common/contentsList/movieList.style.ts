@@ -12,6 +12,10 @@ export const MovieListComponent = styled.section`
   .swiper-slide {
    display: block;
   }
+  
+  .movieItemComponent{
+    width: 230px!important;
+  }
 `;
 
 
@@ -34,7 +38,7 @@ export const MovieItems = styled.div`
     width: 100%;
     height: 100%;
     max-height: 300px;
-    min-height: 200px;
+    min-height: 250px;
     object-fit: cover;
   }
 `

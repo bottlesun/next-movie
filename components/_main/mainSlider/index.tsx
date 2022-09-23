@@ -14,7 +14,7 @@ const MainSlider = () => {
   const {data: movieData} = useSWR('/api/movies/', fetcher, {
     dedupingInterval: 2000,
   })
-
+  console.log(movieData?.results)
 
   return (
     <SlideComponent>
@@ -39,7 +39,7 @@ const MainSlider = () => {
                 <div className={"movieTextBox"}>
                   <h3>{movieData.title}</h3>
                   <p>{movieData.overview}</p>
-                  <Link href={`/contents/movies/${movieData.id}`}>
+                  <Link href={`/contents/movie/${movieData.id}`}>
                     <Button>
                       {'More'}
                     </Button>
