@@ -14,7 +14,7 @@ const MainSlider = () => {
   const {data: movieData} = useSWR('/api/movies/', fetcher, {
     dedupingInterval: 2000,
   })
-  console.log(movieData?.results)
+
 
   return (
     <SlideComponent>

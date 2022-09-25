@@ -11,11 +11,13 @@ type genres = {
 
 const ContentExplanation = ({...contentsData}  ) => {
 
-  const IMG_URL = 'https://image.tmdb.org/t/p/w500' + contentsData.poster_path;
+  const IMG_URL = 'https://image.tmdb.org/t/p/w500/' + contentsData.poster_path;
+  const DUMMY = contentsData.poster_path === undefined || contentsData.poster_path === null
+
   return (
 
     <ContentExplanationWrap>
-      <BG style={{backgroundImage: `url(${IMG_URL})`}}></BG>
+      <BG style={{backgroundImage: `url(${DUMMY ? '' : IMG_URL})`}}></BG>
       <div className="inner">
         <div id="ContentExplanation">
           <Contents>
@@ -39,7 +41,7 @@ const ContentExplanation = ({...contentsData}  ) => {
               {contentsData.overview}
             </p>
           </Contents>
-          <Image src={IMG_URL} alt={contentsData.title} width={280} height={350}/>
+          <Image src={DUMMY ? '/images/dummy.png' : IMG_URL} alt={contentsData.title} width={280} height={350}/>
         </div>
       </div>
     </ContentExplanationWrap>

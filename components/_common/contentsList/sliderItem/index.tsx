@@ -13,12 +13,11 @@ export interface SliderMethod {
 }
 
 const SliderItem = memo(({dataUrl, contentsType}: SliderMethod) => {
-  const IMG_URL = 'https://image.tmdb.org/t/p/w500'
-
   const {data: Data} = useSWR(dataUrl, fetcher, {
     dedupingInterval: 2000,
   });
 
+  const IMG_URL = 'https://image.tmdb.org/t/p/w500'
   const [movieItemHover, setMovieItemHover] = useState("");
 
   return (
@@ -37,7 +36,7 @@ const SliderItem = memo(({dataUrl, contentsType}: SliderMethod) => {
 
             <Link href={`/contents/${contentsType}/${item.id}`}>
               <MovieItems className={`${movieItemHover !== '' ? 'on' : ''}`}>
-                <Image src={`${IMG_URL}${item.poster_path }`} alt={item.title} width={280} height={350} />
+                <Image src={`${IMG_URL}${item.poster_path}`} alt={item.title} width={280} height={350} />
               </MovieItems>
             </Link>
             {contentsType === 'tv' ?

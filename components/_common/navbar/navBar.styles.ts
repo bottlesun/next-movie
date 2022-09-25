@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import {bgColor} from "../../../styles/variable";
+import {bgColor, boxShadow} from "../../../styles/variable";
 
 export const NavList = styled.nav`
   display: flex;
@@ -37,8 +37,8 @@ export const NavList = styled.nav`
         color: #fff;
         font-weight: 500;
       }
-      
-      &.active{
+
+      &.active {
         color: #fff;
         font-weight: 500;
       }
@@ -50,6 +50,7 @@ export const NavList = styled.nav`
     display: flex;
     align-items: center;
     margin-right: 20px;
+    position: relative;
 
     img {
       width: 30px;
@@ -58,6 +59,47 @@ export const NavList = styled.nav`
       margin-right: 10px;
     }
   }
+`
+
+export const UserInfo = styled.ul`
+  display: flex;
+  position: absolute;
+  top: 25px;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  background: ${bgColor};
+  border-radius: 5px;
+  padding: 0;
+  box-shadow: ${boxShadow};
   
+  .user_names{
+    padding: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    span{
+     color: #fff; 
+    }
+  }
+  hr{
+    width: 85%;
+  }
+  li {
+    padding: 10px;
+    transition: 0.2s;
+    a{
+      width: 100%;
+      display: block;
+      color: #fff;
+      transition: 0.2s;
+    }
+    &:hover{
+      background: #ebebeb;
+      a{
+        color: ${bgColor};
+      }
+    }
+  }
 
 `
