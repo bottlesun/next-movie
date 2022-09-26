@@ -49,8 +49,10 @@ export const NavList = styled.nav`
     width: 200px;
     display: flex;
     align-items: center;
-    margin-right: 20px;
     position: relative;
+    cursor: pointer;
+    gap: 10px;
+    justify-content: center;
 
     img {
       width: 30px;
@@ -65,6 +67,7 @@ export const UserInfo = styled.ul`
   display: flex;
   position: absolute;
   top: 25px;
+  left: 0;
   flex-direction: column;
   justify-content: center;
   width: 100%;
@@ -72,33 +75,56 @@ export const UserInfo = styled.ul`
   border-radius: 5px;
   padding: 0;
   box-shadow: ${boxShadow};
-  
-  .user_names{
+
+  .user_names {
     padding: 10px;
     display: flex;
     justify-content: start;
     align-items: center;
-    span{
-     color: #fff; 
+    cursor: pointer;
+    gap:10px;
+
+    span {
+      color: rgba(255, 255, 255, 0.8);
     }
   }
-  hr{
+
+  hr {
     width: 85%;
+    background: #fff;
+    opacity: 0.5;
   }
+
   li {
     padding: 10px;
     transition: 0.2s;
-    a{
+
+    a {
       width: 100%;
       display: block;
-      color: #fff;
+      color: rgba(255,255,255,0.8);
       transition: 0.2s;
+      font-size: 1.2rem;
     }
-    &:hover{
+
+    &:hover {
       background: #ebebeb;
-      a{
+
+      a {
         color: ${bgColor};
       }
+    }
+  }
+
+  .logout {
+    padding: 5px 5px 8px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+
+    &:hover {
+      background: #ebebeb;
+      color: ${bgColor};
     }
   }
 

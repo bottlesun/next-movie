@@ -13,4 +13,6 @@ export default interface MoviApiDatainterface {
   video: boolean
   vote_average: number
   vote_count: number
+  first_air_date:number
+  name:string
 }

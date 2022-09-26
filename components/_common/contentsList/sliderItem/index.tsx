@@ -1,4 +1,5 @@
 import {Swiper, SwiperSlide} from "swiper/react";
+import MoviApiDatainterface from "../../../../interfaces/movie.interfaces";
 import {MovieItems, MovieItemTitleBox} from "../movieList.style";
 import useSWR from "swr";
 import fetcher from "../../../../utils/fetcher";
@@ -17,6 +18,7 @@ const SliderItem = memo(({dataUrl, contentsType}: SliderMethod) => {
     dedupingInterval: 2000,
   });
 
+
   const IMG_URL = 'https://image.tmdb.org/t/p/w500'
   const [movieItemHover, setMovieItemHover] = useState("");
 
@@ -26,7 +28,7 @@ const SliderItem = memo(({dataUrl, contentsType}: SliderMethod) => {
       slidesPerView={6}
     >
       {
-        Data?.results?.map((item: any) => {
+        Data?.results?.map((item: MoviApiDatainterface) => {
           return <SwiperSlide
             key={item.id}
             onMouseEnter={() => setMovieItemHover(`${item.id}`)}
@@ -36,7 +38,7 @@ const SliderItem = memo(({dataUrl, contentsType}: SliderMethod) => {
 
             <Link href={`/contents/${contentsType}/${item.id}`}>
               <MovieItems className={`${movieItemHover !== '' ? 'on' : ''}`}>
-                <Image src={`${IMG_URL}${item.poster_path}`} alt={item.title} width={280} height={350} />
+                <Image src={`${item.poster_path === null ? '/images/dummy.png' : IMG_URL + item.poster_path } `} alt={item.title} width={280} height={350} />
               </MovieItems>
             </Link>
             {contentsType === 'tv' ?

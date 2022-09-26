@@ -50,7 +50,7 @@ export const MovieItemTitleBox = styled.div`
     overflow: hidden;
     text-overflow: ellipsis;
     margin: 5px 0;
-    font-size:1.4rem;
+    font-size:1.3rem;
     font-weight: 500;
   }
   
