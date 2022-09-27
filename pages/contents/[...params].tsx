@@ -12,7 +12,7 @@ export type MovieDetailParams = [string, string] | [];
 
 
 const Contents = ({params}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-  const [value,id] = (params || []) as MovieDetailParams;
+  const [value, id] = (params || []) as MovieDetailParams;
 
   const {data: contentsData} = useSWR(`/api/contents/${value}/${id}`, fetcher, {
     dedupingInterval: 2000,
@@ -22,7 +22,7 @@ const Contents = ({params}: InferGetServerSidePropsType<typeof getServerSideProp
   return (
     <div>
       <SEO title={contentsData?.title}/>
-      <ContentExplanation {...contentsData}  id={id} value={value}/>
+      <ContentExplanation {...contentsData} id={id} value={value}/>
       <hr className={'line'}/>
       <RecommendedMovie id={id} value={value}/>
       <Footer/>

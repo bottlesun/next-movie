@@ -1,5 +1,6 @@
+import Footer from "../components/_common/footer";
 import NavBar from "../components/_common/navbar";
-import React, {useState} from "react";
+import React, {useCallback, useState} from "react";
 
 type AppLayoutProps = {
   children: React.ReactNode;
@@ -11,13 +12,18 @@ type AppLayoutProps = {
 // CustomApp 에서도 하는 작업들이 많기에, layoutComponent 를 만들어 주어 중간에서 관리를 한다.
 
 export default function Layout({children}: AppLayoutProps) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const onCloseModal = useCallback(() => {
+    setMenuOpen(false);
+  },[setMenuOpen])
 
   return (
-    <div>
-      <NavBar/>
+    <div onClick={onCloseModal}>
+      <NavBar setMenuOpen={setMenuOpen} menuOpen={menuOpen} />
       <div>
-          {children}
+        {children}
       </div>
+      <Footer/>
     </div>
   )
 }

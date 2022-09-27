@@ -9,6 +9,7 @@ export const SlideComponent = styled.div`
 
   .swiper {
     height: 100vh;
+    max-height: 800px;
     position: relative;
 
     .swiper-wrapper {

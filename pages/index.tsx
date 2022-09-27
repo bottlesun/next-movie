@@ -1,18 +1,16 @@
 import SEO from "../components/_common/seo";
 import MainSlider from "../components/_main/mainSlider";
-import { GetServerSideProps , InferGetServerSidePropsType } from 'next'
+import {GetServerSideProps, InferGetServerSidePropsType} from 'next'
 import {SWRConfig, unstable_serialize} from "swr";
 import fetcher from "../utils/fetcher";
 import ContentsList from "../components/_common/contentsList";
-import Footer from "../components/_common/footer";
 
 
-export default function Home({fallback}:InferGetServerSidePropsType< typeof getStaticProps>) {
+export default function Home({fallback}: InferGetServerSidePropsType<typeof getStaticProps>) {
 
   return (
     <SWRConfig value={fallback}>
-
-    <SEO title={'Main'}/>
+      <SEO title={'Main'}/>
       <MainSlider/>
 
       <div className={'container'}>
@@ -21,14 +19,13 @@ export default function Home({fallback}:InferGetServerSidePropsType< typeof getS
           <ContentsList title={'Best TV show'} dataUrl={'/api/tv'} contentsType={'tv'}/>
         </div>
       </div>
-      <Footer/>
     </SWRConfig>
   )
 }
 
-export const getStaticProps : GetServerSideProps = async() =>{
+export const getStaticProps: GetServerSideProps = async () => {
   const movieData = await fetcher('http://localhost:3000/api/movies');
-  const tvData = await  fetcher('http://localhost:3000/api/tv')
+  const tvData = await fetcher('http://localhost:3000/api/tv')
 
   return {
     props: {

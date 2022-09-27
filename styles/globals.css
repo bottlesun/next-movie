@@ -83,4 +83,12 @@ a {
     }
 }
 
+.logo{
+    width: 150px;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
 
