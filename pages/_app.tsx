@@ -4,6 +4,7 @@ import Layout from "../layout";
 import React from "react";
 
 function MyApp({Component, pageProps}: AppProps) {
+
   return (
     <Layout>
       <Component {...pageProps} />

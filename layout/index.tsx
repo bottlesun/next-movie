@@ -13,13 +13,15 @@ type AppLayoutProps = {
 
 export default function Layout({children}: AppLayoutProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+
   const onCloseModal = useCallback(() => {
     setMenuOpen(false);
-  },[setMenuOpen])
+  }, [setMenuOpen])
+
 
   return (
     <div onClick={onCloseModal}>
-      <NavBar setMenuOpen={setMenuOpen} menuOpen={menuOpen} />
+      <NavBar setMenuOpen={setMenuOpen} menuOpen={menuOpen}/>
       <div>
         {children}
       </div>

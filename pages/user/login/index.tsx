@@ -8,7 +8,7 @@ import router from "next/router";
 const Login = () => {
   const [inputs, setInputs] = useState({id: '', password: ''});
   const {id, password} = inputs;
-  const { setLogin} = useLoginStore();
+  const {setLogin} = useLoginStore();
 
   const onFocus = (e: FocusEvent) => {
     const target = e.target as HTMLInputElement;
@@ -17,7 +17,7 @@ const Login = () => {
 
   function onBlur(e: FocusEvent) {
     const target = e.target as HTMLInputElement;
-    if (target) target?.parentElement?.classList.remove('on');
+    if (target.value === '') target?.parentElement?.classList.remove('on');
   }
 
   const onChange = (e: ChangeEvent) => {
@@ -33,8 +33,7 @@ const Login = () => {
   const onComplete = useCallback(() => {
     setLogin(true);
     return router?.push('/');
-  },[setLogin]);
-
+  }, [setLogin]);
 
 
   return (
@@ -52,7 +51,8 @@ const Login = () => {
                    onBlur={onBlur}
                    onFocus={onFocus}
                    onChange={onChange}
-                   name={'id'} value={id}/>
+                   name={'id'} value={id}
+                   required/>
           </div>
 
           <div className={'login-input'}>
@@ -62,7 +62,8 @@ const Login = () => {
                    onBlur={onBlur}
                    onFocus={onFocus}
                    onChange={onChange}
-                   name={'password'} value={password}/>
+                   name={'password'} value={password}
+                   required/>
           </div>
 
           <button type='button' onClick={onComplete}>LOGIN</button>

@@ -1,9 +1,12 @@
 import SEO from "../../components/_common/seo";
+import useLogin from "../../utils/useLogin";
 import {MovieComponent} from "../movie/movie.style";
 import ContentsList from "../../components/_common/contentsList";
 
 
 const TV = () => {
+
+  useLogin();
   return (
     <MovieComponent>
       <SEO title={'TV 프로그램'}/>
