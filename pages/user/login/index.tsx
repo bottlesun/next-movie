@@ -10,17 +10,17 @@ const Login = () => {
   const {id, password} = inputs;
   const {setLogin} = useLoginStore();
 
-  const onFocus = (e: FocusEvent) => {
+  const onFocus = useCallback((e: FocusEvent) => {
     const target = e.target as HTMLInputElement;
     if (target) target?.parentElement?.classList.add('on');
-  };
+  },[inputs]);
 
-  function onBlur(e: FocusEvent) {
+  const onBlur = useCallback((e: FocusEvent) => {
     const target = e.target as HTMLInputElement;
     if (target.value === '') target?.parentElement?.classList.remove('on');
-  }
+  },[inputs]);
 
-  const onChange = (e: ChangeEvent) => {
+  const onChange = useCallback((e: ChangeEvent) => {
     const {value, name} = e.target as HTMLInputElement;
     setInputs(
       {
@@ -28,7 +28,7 @@ const Login = () => {
         [name]: value
       }
     )
-  };
+  },[inputs]);
 
   const onComplete = useCallback(() => {
     setLogin(true);
@@ -78,7 +78,7 @@ const Login = () => {
         </ul>
         <div className={'join-as'}>
           아직 계정이 없으신가요?
-          <Link href={'/'}><a>회원가입하기</a></Link>
+          <Link href={'/user/join'}><a>회원가입하기</a></Link>
         </div>
       </FindAndJoin>
 
