@@ -36,7 +36,6 @@ export const LoginWrap = styled.section`
         position: relative;
 
         label {
-          width: 100px;
           display: block;
           margin-bottom: 10px;
           position: absolute;
@@ -130,5 +129,23 @@ export const FindAndJoin = styled.div`
         color: #fff;
       }
     }
+  }
+`
+
+export const JoinAs = styled.div`
+  width: 400px;
+  padding: 10px;
+  font-size: 22px;
+  text-align: left;
+  
+  hr{
+    width: 100%;
+    background: #fff;
+  }
+`
+
+export const JoinTitle = styled.div`
+  .title{
+    margin-bottom: 10px;
   }
 `

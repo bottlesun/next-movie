@@ -2,9 +2,9 @@ import Link from 'next/link';
 import {useCallback} from "react";
 import SEO from "../../../components/_common/seo";
 import useLoginStore from "../../../stores/loginStores";
-import {useInput} from "../../../utils/useInput";
 import {FindAndJoin, LoginWrap} from "./login.style";
 import router from "next/router";
+import useInput from "../../../hooks/useInput"
 
 const Login = () => {
   const {setLogin} = useLoginStore();
@@ -31,7 +31,7 @@ const Login = () => {
                    onBlur={onBlur}
                    onFocus={onFocus}
                    onChange={onChange}
-                   name={'id'} value={inputs.initialForm}
+                   name={'id'} value={inputs.id}
                    required/>
           </div>
 
@@ -42,7 +42,7 @@ const Login = () => {
                    onBlur={onBlur}
                    onFocus={onFocus}
                    onChange={onChange}
-                   name={'password'} value={inputs.initialForm}
+                   name={'password'} value={inputs.password}
                    required/>
           </div>
 

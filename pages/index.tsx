@@ -5,7 +5,7 @@ import {GetServerSideProps, InferGetServerSidePropsType} from 'next'
 import {SWRConfig, unstable_serialize} from "swr";
 import fetcher from "../utils/fetcher";
 import ContentsList from "../components/_common/contentsList";
-import useLogin from "../utils/useLogin";
+import useLogin from "../hooks/useLogin";
 
 
 export default function Home({fallback}: InferGetServerSidePropsType<typeof getStaticProps>) {
