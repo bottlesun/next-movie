@@ -25,7 +25,6 @@ const Contents = ({params}: InferGetServerSidePropsType<typeof getServerSideProp
       <ContentExplanation {...contentsData} id={id} value={value}/>
       <hr className={'line'}/>
       <RecommendedMovie id={id} value={value}/>
-      <Footer/>
     </div>
   )
 }

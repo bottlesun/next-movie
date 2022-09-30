@@ -19,7 +19,7 @@ const Menu = () => {
   const onLogoutSet = useCallback(() => {
      setLogin(false);
     return router.push('/user/login')
-  },[setLogin ])
+  },[setLogin])
 
   return (
     <UserInfo onClick={stopPropagation}>

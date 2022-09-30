@@ -1,5 +1,5 @@
 import {Swiper, SwiperSlide} from "swiper/react";
-import MoviApiDatainterface from "../../../../interfaces/movie.interfaces";
+import MovieApiDataInterface from "../../../../interfaces/movie.interfaces";
 import {MovieItems, MovieItemTitleBox} from "../movieList.style";
 import useSWR from "swr";
 import fetcher from "../../../../utils/fetcher";
@@ -28,7 +28,7 @@ const SliderItem = memo(({dataUrl, contentsType}: SliderMethod) => {
       slidesPerView={6}
     >
       {
-        Data?.results?.map((item: MoviApiDatainterface) => {
+        Data?.results?.map((item: MovieApiDataInterface) => {
           return <SwiperSlide
             key={item.id}
             onMouseEnter={() => setMovieItemHover(`${item.id}`)}

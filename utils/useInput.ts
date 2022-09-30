@@ -1,21 +1,8 @@
 import {ChangeEvent, FocusEvent, useCallback, useState} from "react";
-import useLoginStore from "../stores/loginStores";
+import {useInputInterface} from "../interfaces/useInput.interfases";
 
-
-function useInput() {
-  const [inputs, setInputs] = useState({id: '', password: ''});
-  const {id, password} = inputs;
-
-
-  const onFocus = useCallback((e: FocusEvent) => {
-    const target = e.target as HTMLInputElement;
-    if (target) target?.parentElement?.classList.add('on');
-  }, [inputs]);
-
-  const onBlur = useCallback((e: FocusEvent) => {
-    const target = e.target as HTMLInputElement;
-    if (target.value === '') target?.parentElement?.classList.remove('on');
-  }, [inputs]);
+export function useInput({initialForm}: useInputInterface) {
+  const [inputs, setInputs] = useState({initialForm: initialForm});
 
   const onChange = useCallback((e: ChangeEvent) => {
     const {value, name} = e.target as HTMLInputElement;
@@ -27,5 +14,16 @@ function useInput() {
     )
   }, [inputs]);
 
-return {onChange,onBlur,onFocus}
+  const onFocus = useCallback((e: FocusEvent) => {
+    const target = e.target as HTMLInputElement;
+    if (target) target?.parentElement?.classList.add('on');
+  }, []);
+
+  const onBlur = useCallback((e: FocusEvent) => {
+    const target = e.target as HTMLInputElement;
+    if (target.value === '') target?.parentElement?.classList.remove('on');
+  }, []);
+
+
+  return {onChange, onBlur, onFocus, inputs}
 }

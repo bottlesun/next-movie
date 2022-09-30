@@ -1,40 +1,20 @@
 import Link from 'next/link';
-import {ChangeEvent, FocusEvent, useCallback, useState} from "react";
+import {useCallback} from "react";
 import SEO from "../../../components/_common/seo";
 import useLoginStore from "../../../stores/loginStores";
+import {useInput} from "../../../utils/useInput";
 import {FindAndJoin, LoginWrap} from "./login.style";
 import router from "next/router";
 
 const Login = () => {
-  const [inputs, setInputs] = useState({id: '', password: ''});
-  const {id, password} = inputs;
   const {setLogin} = useLoginStore();
+  const {onChange, inputs, onFocus, onBlur} = useInput({id: '', password: ''});
 
-  const onFocus = useCallback((e: FocusEvent) => {
-    const target = e.target as HTMLInputElement;
-    if (target) target?.parentElement?.classList.add('on');
-  },[inputs]);
-
-  const onBlur = useCallback((e: FocusEvent) => {
-    const target = e.target as HTMLInputElement;
-    if (target.value === '') target?.parentElement?.classList.remove('on');
-  },[inputs]);
-
-  const onChange = useCallback((e: ChangeEvent) => {
-    const {value, name} = e.target as HTMLInputElement;
-    setInputs(
-      {
-        ...inputs,
-        [name]: value
-      }
-    )
-  },[inputs]);
 
   const onComplete = useCallback(() => {
     setLogin(true);
     return router?.push('/');
   }, [setLogin]);
-
 
   return (
     <LoginWrap>
@@ -51,7 +31,7 @@ const Login = () => {
                    onBlur={onBlur}
                    onFocus={onFocus}
                    onChange={onChange}
-                   name={'id'} value={id}
+                   name={'id'} value={inputs.initialForm}
                    required/>
           </div>
 
@@ -62,7 +42,7 @@ const Login = () => {
                    onBlur={onBlur}
                    onFocus={onFocus}
                    onChange={onChange}
-                   name={'password'} value={password}
+                   name={'password'} value={inputs.initialForm}
                    required/>
           </div>
 

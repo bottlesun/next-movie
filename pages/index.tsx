@@ -10,6 +10,7 @@ import useLogin from "../utils/useLogin";
 
 export default function Home({fallback}: InferGetServerSidePropsType<typeof getStaticProps>) {
   useLogin();
+
   return (
     <SWRConfig value={fallback}>
       <SEO title={'Main'}/>

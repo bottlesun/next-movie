@@ -1,4 +1,4 @@
-export default interface MoviApiDatainterface {
+export default interface MovieApiDataInterface {
   adult: boolean
   backdrop_path: string
   genre_ids: number[]
