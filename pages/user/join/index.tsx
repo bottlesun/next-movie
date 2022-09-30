@@ -1,10 +1,17 @@
 import SEO from "../../../components/_common/seo";
 import useInput from "../../../hooks/useInput";
-import {LoginWrap, JoinAs, JoinTitle} from "../login/login.style";
+import {LoginWrap, JoinAs} from "../login/login.style";
+import InputComponent from "../../../components/_common/inputComponent";
+import router from "next/router";
+import {useCallback} from "react";
 
 const Join = () => {
-  const {onChange, inputs, onFocus, onBlur} = useInput({id: '', password: ''});
+  const {onChange, inputs, onFocus, onBlur} = useInput({id: '', password: '',rePassword:'',nickName:''});
+  const {id , password,rePassword,nickName} = inputs;
 
+  const onCompleteJoin = useCallback(() => {
+    return router?.push('/user/login');
+  },[])
   return (
     <LoginWrap>
       <SEO title={'회원가입'}/>
@@ -16,37 +23,45 @@ const Join = () => {
 
       <div className={'login-wrap'}>
         <fieldset>
-          <JoinTitle>
-            <div>아이디</div>
-            <div className={'login-input'}>
-              <label htmlFor="id">아이디를 입력하세요. <span>*</span></label>
-              <input type="text"
-                     id='id'
-                     onBlur={onBlur}
-                     onFocus={onFocus}
-                     onChange={onChange}
-                     name={'id'} value={inputs.id}
-                     required/>
-            </div>
-          </JoinTitle>
 
-          <JoinTitle>
-            <div className={'title'}>비밀번호</div>
-            <div className={'login-input'}>
-              <label htmlFor="password"> 4~8자의 숫자만 입력하세요.<span>*</span> </label>
-              <input type="password"
-                     id='password'
-                     onBlur={onBlur}
-                     onFocus={onFocus}
-                     onChange={onChange}
-                     name={'password'} value={inputs.password}
-                     minLength={4}
-                     maxLength={8}
-                     required/>
-            </div>
-          </JoinTitle>
+          <InputComponent title={'아이디'}
+                              labelText={'아이디를 입력해주세요'}
+                              value={id}
+                              name={'id'}
+                              onBlur={onBlur}
+                              onFocus={onFocus}
+                              onChange={onChange}
+                              required={true}/>
 
-          <button type='button'>회원가입</button>
+          <InputComponent title={'닉네임'}
+                              labelText={'닉네임을 입력해주세요'}
+                              value={nickName}
+                              name={'nickName'}
+                              onBlur={onBlur}
+                              onFocus={onFocus}
+                              onChange={onChange}
+                              required={true}/>
+
+          <InputComponent title={'비밀번호'}
+                          labelText={'4~8 글자를 입력해주세요'}
+                          value={password}
+                          name={'password'}
+                          onBlur={onBlur}
+                          onFocus={onFocus}
+                          onChange={onChange}
+                          required={true}/>
+
+          <InputComponent title={'비밀번호 확인'}
+                              labelText={'비밀번호를 다시 입력해주세요'}
+                              value={rePassword}
+                              name={'RePassword'}
+                              onBlur={onBlur}
+                              onFocus={onFocus}
+                              onChange={onChange}
+                              required={true}/>
+
+
+          <button type='button' onClick={onCompleteJoin}>회원가입</button>
 
         </fieldset>
       </div>

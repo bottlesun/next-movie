@@ -31,7 +31,7 @@ const Menu = () => {
       <hr/>
       <li><a href="#">MY</a></li>
       <li><a href="#">이용권</a></li>
-      <li> <a onClick={onLogoutSet} >LOGOUT</a></li>
+      <li> <a onClick={onLogoutSet} >logout</a></li>
 
     </UserInfo>
   )

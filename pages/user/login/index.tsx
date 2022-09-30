@@ -5,11 +5,13 @@ import useLoginStore from "../../../stores/loginStores";
 import {FindAndJoin, LoginWrap} from "./login.style";
 import router from "next/router";
 import useInput from "../../../hooks/useInput"
+import InputComponent from "../../../components/_common/inputComponent";
+import CommonModal from "../../../components/_modal/commonModal";
 
 const Login = () => {
   const {setLogin} = useLoginStore();
   const {onChange, inputs, onFocus, onBlur} = useInput({id: '', password: ''});
-
+  const {id,password} = inputs
 
   const onComplete = useCallback(() => {
     setLogin(true);
@@ -24,27 +26,24 @@ const Login = () => {
       </h3>
       <div className={'login-wrap'}>
         <fieldset>
-          <div className={'login-input'}>
-            <label htmlFor="id">아이디 <span>*</span></label>
-            <input type="text"
-                   id='id'
-                   onBlur={onBlur}
-                   onFocus={onFocus}
-                   onChange={onChange}
-                   name={'id'} value={inputs.id}
-                   required/>
-          </div>
+          <InputComponent title={''}
+                          labelText={'아이디'}
+                          value={id}
+                          name={'id'}
+                          onBlur={onBlur}
+                          onFocus={onFocus}
+                          onChange={onChange}
+                          required={true}/>
 
-          <div className={'login-input'}>
-            <label htmlFor="password">비밀번호 <span>*</span> </label>
-            <input type="password"
-                   id='password'
-                   onBlur={onBlur}
-                   onFocus={onFocus}
-                   onChange={onChange}
-                   name={'password'} value={inputs.password}
-                   required/>
-          </div>
+          <InputComponent title={''}
+                          labelText={'비밀번호'}
+                          value={password}
+                          name={'password'}
+                          onBlur={onBlur}
+                          onFocus={onFocus}
+                          onChange={onChange}
+                          required={true}/>
+
 
           <button type='button' onClick={onComplete}>LOGIN</button>
 
@@ -61,6 +60,8 @@ const Login = () => {
           <Link href={'/user/join'}><a>회원가입하기</a></Link>
         </div>
       </FindAndJoin>
+
+      <CommonModal children={'회원가입 완료 되었습니다.'} buttonChildren={'확인'}/>
 
     </LoginWrap>
   )

@@ -147,5 +147,6 @@ export const JoinAs = styled.div`
 export const JoinTitle = styled.div`
   .title{
     margin-bottom: 10px;
+    font-size: 10px;
   }
 `
