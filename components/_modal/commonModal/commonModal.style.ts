@@ -10,6 +10,7 @@ export const ModalBg = styled.article`
   top: 0;
   left: 0;
   display: flex;
+  z-index: 999;
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.7);
@@ -19,7 +20,7 @@ export const ModalBg = styled.article`
     max-width: 400px;
     min-width: 250px;
     height: 100%;
-    max-height: 200px;
+    max-height: 180px;
     background: ${bgColor};
     box-shadow: ${boxShadow};
     border-radius: 10px;
@@ -30,7 +31,7 @@ export const ModalBg = styled.article`
   }
 
   .modalBody {
-    padding: 40px;
+    padding: 30px;
     max-height: 100px;
   }
 
