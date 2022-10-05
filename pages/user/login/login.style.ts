@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import {bgColor, boxShadow, mainBgColor} from "../../../styles/variable";
 
 export const LoginWrap = styled.section`
   height: 100vh;
@@ -77,14 +78,16 @@ export const LoginWrap = styled.section`
         width: 100%;
         height: 40px;
         border-radius: 6px;
-        color: #333;
+        color: #fff;
+        background: none;
         cursor: pointer;
         transition: 0.4s;
         border: 1px solid #fff;
 
         &:hover {
-          color: #fff;
-          background: none;
+          color: #333;
+          background: #fff
+          };
         }
       }
     }

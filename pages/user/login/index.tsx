@@ -1,17 +1,15 @@
 import Link from 'next/link';
-import {useCallback, useState} from "react";
+import {useCallback} from "react";
 import SEO from "../../../components/_common/seo";
 import useLoginStore from "../../../stores/loginStores";
 import {FindAndJoin, LoginWrap} from "./login.style";
 import router from "next/router";
 import useInput from "../../../hooks/useInput"
 import InputComponent from "../../../components/_common/inputComponent";
-import CommonModal from "../../../components/_modal/commonModal";
 
 const Login = () => {
   const {setLogin} = useLoginStore();
   const {onChange, inputs, onFocus, onBlur} = useInput({id: '', password: ''});
-  const [modalOpen, setModalOpen] = useState(true);
 
   const {id, password} = inputs
 
@@ -63,11 +61,6 @@ const Login = () => {
         </div>
       </FindAndJoin>
 
-      {
-        modalOpen &&
-        <CommonModal children={'회원가입 완료 되었습니다.'} buttonChildren={'확인'}
-                     modalOpen={modalOpen} setModalOpen={setModalOpen}/>
-      }
 
     </LoginWrap>
   )
