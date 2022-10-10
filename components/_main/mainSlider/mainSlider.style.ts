@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
-import {mainBgColor  ,bgColor} from "../../../styles/variable";
+import {mainBgColor, bgColor} from "../../../styles/variable";
 
 export const SlideComponent = styled.div`
   width: 100%;
   margin-bottom: 50px;
   color: #fff;
-  
+
 
   .swiper {
     height: 100vh;
@@ -107,6 +107,6 @@ export const MoveBg = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  filter: blur(200px);
+  filter: blur(110px);
   z-index: -1;
 `

@@ -12,13 +12,14 @@ export const NavList = styled.nav`
   padding: 0 20px;
   position: absolute;
   z-index: 999;
-
+  
   .menus {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     margin-right: 20px;
+    z-index: 999;
 
     h3 {
       width: 150px;
