@@ -24,7 +24,7 @@ export default function Layout({children}: AppLayoutProps) {
   return (
     <div onClick={onCloseModal}>
       {
-        login && <NavBar setMenuOpen={setMenuOpen} menuOpen={menuOpen} />
+        login && <NavBar setMenuOpen={setMenuOpen} menuOpen={menuOpen}/>
       }
       <div>
         {children}
