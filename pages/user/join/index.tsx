@@ -69,7 +69,7 @@ const Join = () => {
 
       {
         modalOpen &&
-        <CommonModal children={'회원가입 완료 되었습니다.'} buttonChildren={'확인'}
+        <CommonModal text={'회원가입 완료 되었습니다.'} buttonChildren={'확인'}
                      modalOpen={modalOpen} setModalOpen={setModalOpen}
                      url={'/user/login'}/>
       }

@@ -11,16 +11,16 @@ export const SearchActiveWrap = styled.section`
   width: 100%;
   height: 100vh;
   padding: 80px 30px 50px;
-  background: ${bgColor};
+  background: #000;
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
 
-  .searchInputGuide{
+  .searchInputGuide {
     max-width: 500px;
     margin: 0 auto;
-    
+
     .searchInput {
       padding: 30px 5px 0;
       height: 100%;
@@ -31,7 +31,7 @@ export const SearchActiveWrap = styled.section`
 
       input {
         width: 100%;
-        height:30px;
+        height: 30px;
         border: none;
         background: none;
         position: relative;
@@ -42,7 +42,7 @@ export const SearchActiveWrap = styled.section`
         }
       }
 
-      button{
+      button {
         width: 30px;
         height: 30px;
         background: url("/images/icon_search.svg") no-repeat center center;
@@ -50,6 +50,10 @@ export const SearchActiveWrap = styled.section`
         border: none;
         cursor: pointer;
       }
-    } 
+    }
+
+    hr {
+      background: #fff;
+    }
   }
 `

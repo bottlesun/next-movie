@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import {ModalBg} from "./commonModal.style";
 import {Button} from "../../_common/commonButton/commonButton.style";
-import { useRef} from "react";
+import {useRef} from "react";
 
 export interface modal {
-  children: string
+  text: string
   buttonChildren: string
   modalOpen: boolean
   setModalOpen: (modalOpen: boolean) => void
-  url:string
+  url: string
 }
 
-const CommonModal = ({children, buttonChildren, setModalOpen,url}: modal) => {
+const CommonModal = ({text, buttonChildren, setModalOpen, url}: modal) => {
   const displayTarget = useRef(null)
 
   const closeModal = () => {
@@ -20,11 +20,11 @@ const CommonModal = ({children, buttonChildren, setModalOpen,url}: modal) => {
 
 
   return (
-    <ModalBg ref={displayTarget} >
+    <ModalBg ref={displayTarget}>
       <div className={'modalComponent'}>
         <div className={'modalHead'}></div>
         <div className={'modalBody'}>
-          {children}
+          {text}
         </div>
 
         <div className={'modalFooter'}>
