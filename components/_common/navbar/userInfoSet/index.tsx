@@ -1,9 +1,8 @@
 import gravatar from "gravatar";
 import Image from "next/image";
-import router from "next/router";
 import React, {MouseEvent, useCallback} from "react";
 import user from "../../../../data/dummy";
-import menuInterface from "../../../../interfaces/menu.interfaces";
+import {menuInterface} from "../../../../interfaces/menu.interfaces";
 import Menu from "../../menu";
 import {UserInfoNav} from "./userInfoSet.style";
 

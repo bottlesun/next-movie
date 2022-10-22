@@ -45,14 +45,17 @@ const nextConfig = {
         source: '/api/:value/topRated',
         destination: `https://api.themoviedb.org/3/:value/top_rated?api_key=${API_KEY}&language=ko-KR`,
       },
-
       {
         source: '/api/contents/:value/:id',
         destination: `https://api.themoviedb.org/3/:value/:id?api_key=${API_KEY}&language=ko-KR`,
       },
       {
         source: '/api/contents/:value/:id/similar',
-        destination: `https://api.themoviedb.org/3/:value/:id/similar?api_key=${API_KEY}&language=ko-KR&`,
+        destination: `https://api.themoviedb.org/3/:value/:id/similar?api_key=${API_KEY}&language=ko-KR`,
+      },
+      {
+        source: '/api/search/:query',
+        destination: `https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&language=ko-KR&query=:query`,
       },
 
     ]

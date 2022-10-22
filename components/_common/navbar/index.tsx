@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import menuInterface from "../../../interfaces/menu.interfaces";
+import {menuInterface} from "../../../interfaces/menu.interfaces";
 import useLoginStore from '../../../stores/loginStores'
 import {NavList} from "./navBar.style";
 import {useRouter} from "next/router";

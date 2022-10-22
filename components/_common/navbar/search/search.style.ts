@@ -11,14 +11,16 @@ export const SearchActiveWrap = styled.section`
   width: 100%;
   height: 100vh;
   padding: 80px 30px 50px;
-  background: #000;
+  background: rgba(0, 0, 0, 0.9);
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
 
   .searchInputGuide {
-    max-width: 500px;
+    width: 100%;
+    min-width: 500px;
+    max-width: 800px;
     margin: 0 auto;
 
     .searchInput {
@@ -55,5 +57,63 @@ export const SearchActiveWrap = styled.section`
     hr {
       background: #fff;
     }
+  }
+`
+
+export const SearchContentsImgUl = styled.ul`
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  padding: 0;
+  margin: 30px auto 0;
+  min-width: 500px;
+  max-width: 800px;
+  width: 100%;
+
+  li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+
+    p {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 200px;
+      margin: 0;
+    }
+
+
+    span {
+      width: 100%;
+      display: block;
+      font-size: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-top: 5px;
+    }
+  }
+`
+
+export const SearchContentsTextUl = styled.ul`
+  width: 100%;
+  padding: 0;
+  min-width: 500px;
+  max-width: 800px;
+  width: 100%;
+  margin: 30px auto 0;
+
+  li {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    position: relative;
   }
 `

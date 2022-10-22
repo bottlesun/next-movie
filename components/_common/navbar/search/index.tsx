@@ -1,10 +1,11 @@
 import Image from "next/image";
 import {SearchWrap} from "./search.style";
-import {useCallback, useState} from "react";
 import SearchActive from "./searchActive";
+import {EventHandler, useCallback, useState} from "react";
 
 const searchIcon = '/images/icon_search.svg'
 const closeIcon = '/images/icon_x.svg'
+
 
 const Search = () => {
   const [toggleActive, setToggleActive] = useState(true);
@@ -20,7 +21,7 @@ const Search = () => {
       </div>
 
       {
-        !toggleActive && <SearchActive/>
+        !toggleActive && <SearchActive searchToggle={searchToggle}/>
       }
     </SearchWrap>
   )

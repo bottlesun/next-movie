@@ -1,4 +1,3 @@
-import {useEffect} from "react";
 import SEO from "../components/_common/seo";
 import MainSlider from "../components/_main/mainSlider";
 import {GetServerSideProps, InferGetServerSidePropsType} from 'next'
