@@ -18,7 +18,6 @@ const Contents = ({params}: InferGetServerSidePropsType<typeof getServerSideProp
     dedupingInterval: 2000,
   })
 
-
   return (
     <div>
       <SEO title={contentsData?.title}/>

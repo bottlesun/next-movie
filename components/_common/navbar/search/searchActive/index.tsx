@@ -3,7 +3,6 @@ import fetcher from "../../../../../utils/fetcher";
 import {SearchActiveWrap, SearchContentsImgUl, SearchContentsTextUl} from "../search.style";
 import {ChangeEvent, useCallback, useState, MouseEventHandler} from "react";
 import Image from "next/image";
-import user from "../../../../../data/dummy";
 import Link from "next/link";
 
 
@@ -12,7 +11,7 @@ export interface searchToggleInterface {
 }
 
 const SearchActive = ({searchToggle}: searchToggleInterface) => {
-  const [text, setText] = useState('test');
+  const [text, setText] = useState('');
   const onChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value)
   }, [text, setText])
@@ -21,7 +20,7 @@ const SearchActive = ({searchToggle}: searchToggleInterface) => {
 
 
   return (
-    <SearchActiveWrap>
+    <SearchActiveWrap onClick={searchToggle}>
       <div className={'searchInputGuide'}>
         <div className={'searchInput'} onClick={(e) => e.stopPropagation()}>
           <label htmlFor="searchInput"></label>
@@ -39,7 +38,7 @@ const SearchActive = ({searchToggle}: searchToggleInterface) => {
             return <Link key={searchItemImg.id} href={`/contents/${searchItemImg.media_type}/${searchItemImg.id}`}>
               <li>
                 <p>
-                  <Image src={IMG_URL + searchItemImg?.poster_path} alt={searchItemImg.name}
+                  <Image src={searchItemImg.poster_path === null ? '/images/dummy.png' : IMG_URL + searchItemImg.poster_path } alt={searchItemImg.name}
                          onClick={searchToggle}
                          layout='fill'></Image>
                 </p>
