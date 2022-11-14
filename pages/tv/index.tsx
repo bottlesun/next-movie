@@ -14,9 +14,9 @@ const TV = () => {
 
       <div className={'container'}>
         <div className={'inner'}>
-          <ContentsList title={'Best TV 프로그램'} dataUrl={'/api/tv'} contentsType={'tv'}/>
-          <ContentsList title={'방영중인 TV 프로그램'} dataUrl={`/api/tv/onAir`} contentsType={'tv'}/>
-          <ContentsList title={'평점이 높은 TV 프로그램'} dataUrl={`/api/tv/topRated`} contentsType={'tv'}/>
+          <ContentsList title={'Best TV 프로그램'} dataUrl={'/api/tv'} contentsValue={'tv'}/>
+          <ContentsList title={'방영중인 TV 프로그램'} dataUrl={`/api/tv/on_the_air`} contentsValue={'tv'}/>
+          <ContentsList title={'평점이 높은 TV 프로그램'} dataUrl={`/api/tv/top_rated`} contentsValue={'tv'}/>
         </div>
       </div>
     </MovieComponent>

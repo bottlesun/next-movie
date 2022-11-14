@@ -22,15 +22,18 @@ export const SearchActiveWrap = styled.section`
     min-width: 500px;
     max-width: 800px;
     margin: 0 auto;
-
-    .searchInput {
-      padding: 30px 5px 0;
-      height: 100%;
-      text-align: center;
+    
+    .searchWrap{
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 30px 5px 0;
+      height: 100%;
+      text-align: center;
+    }
 
+    .searchInput {
+      width: 100%;
       input {
         width: 100%;
         height: 30px;
@@ -43,15 +46,15 @@ export const SearchActiveWrap = styled.section`
           outline: none;
         }
       }
-
-      button {
-        width: 30px;
-        height: 30px;
-        background: url("/images/icon_search.svg") no-repeat center center;
-        background-size: cover;
-        border: none;
-        cursor: pointer;
-      }
+    }
+    button {
+      width: 30px;
+      height: 30px;
+      background: url("/images/icon_search.svg") no-repeat center center;
+      background-size: cover;
+      border: none;
+      cursor: pointer;
+      position: relative;
     }
 
     hr {

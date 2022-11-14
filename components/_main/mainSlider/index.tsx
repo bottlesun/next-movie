@@ -11,10 +11,9 @@ import {Button} from "../../_common/commonButton/commonButton.style";
 
 const MainSlider = () => {
   const IMG_URL = 'https://image.tmdb.org/t/p/w500'
-  const {data: movieData} = useSWR('/api/movies/', fetcher, {
+  const {data: movieData} = useSWR('/api/movie/', fetcher, {
     dedupingInterval: 2000,
   })
-
 
   return (
     <SlideComponent>

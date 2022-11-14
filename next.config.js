@@ -22,42 +22,25 @@ const nextConfig = {
     // api 등 필요 부분 보안을 위해서도 필요한 부분
     return [
       {
-        source: '/api/movies',  // 들어오는 요청 경로 패턴
-        destination: `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=ko-KR`,
-      },
-      {
-        source: '/api/:value/upcoming',
-        destination: `https://api.themoviedb.org/3/:value/upcoming?api_key=${API_KEY}&language=ko-KR`,
-      },
-      {
-        source: '/api/:value/nowPlaying',
-        destination: `https://api.themoviedb.org/3/:value/now_playing?api_key=${API_KEY}&language=ko-KR`,
-      },
-      {
-        source: '/api/tv',
-        destination: `https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&language=ko-KR`,
-      },
-      {
-        source: '/api/tv/onAir',
-        destination: `https://api.themoviedb.org/3/tv/on_the_air?api_key=${API_KEY}&language=ko-KR`,
-      },
-      {
-        source: '/api/:value/topRated',
-        destination: `https://api.themoviedb.org/3/:value/top_rated?api_key=${API_KEY}&language=ko-KR`,
+        source: '/api/:value',  // 들어오는 요청 경로 패턴
+        destination: `https://api.themoviedb.org/3/:value/popular?api_key=${API_KEY}&language=ko-KR&include_adult=false`,
       },
       {
         source: '/api/contents/:value/:id',
-        destination: `https://api.themoviedb.org/3/:value/:id?api_key=${API_KEY}&language=ko-KR`,
+        destination: `https://api.themoviedb.org/3/:value/:id?api_key=${API_KEY}&language=ko-KR&include_adult=false`,
       },
       {
-        source: '/api/contents/:value/:id/similar',
-        destination: `https://api.themoviedb.org/3/:value/:id/similar?api_key=${API_KEY}&language=ko-KR`,
+        source: '/api/:value/:type',
+        destination: `https://api.themoviedb.org/3/:value/:type?api_key=${API_KEY}&language=ko-KR&include_adult=false`,
       },
       {
-        source: '/api/search/:query',
-        destination: `https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&language=ko-KR&query=:query`,
+        source: '/api/contents/:value/:id/:type',
+        destination: `https://api.themoviedb.org/3/:value/:id/:type?api_key=${API_KEY}&language=ko-KR&include_adult=false`,
       },
-
+      {
+        source: '/api/search/:value/:query',
+        destination: `https://api.themoviedb.org/3/search/:value?api_key=${API_KEY}&language=ko-KR&query=:query&include_adult=false`,
+      },
     ]
   },
 }

@@ -1,13 +1,13 @@
 import Image from "next/image";
-import {SearchWrap} from "./search.style";
+import {SearchWrap} from "./searchbar.style";
 import SearchActive from "./searchActive";
-import {EventHandler, useCallback, useState} from "react";
+import {useCallback, useState} from "react";
 
 const searchIcon = '/images/icon_search.svg'
 const closeIcon = '/images/icon_x.svg'
 
 
-const Search = () => {
+const SearchBar = () => {
   const [toggleActive, setToggleActive] = useState(true);
   const searchToggle = useCallback(() => {
     setToggleActive(!toggleActive);
@@ -27,4 +27,4 @@ const Search = () => {
   )
 }
 
-export default Search;
+export default SearchBar;

@@ -25,7 +25,7 @@ const Menu = () => {
     <UserInfo onClick={stopPropagation}>
       <div className="user_names">
         <Image src={'https:' + gravatar.url(user[0].email, {s: '30px', d: 'retro'})} alt={user[0].name} width={25}
-               height={25}/>
+               height={25} />
         <span>{user[0].name}님!</span>
       </div>
       <hr/>

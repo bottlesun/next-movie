@@ -10,10 +10,10 @@ import Image from "next/image";
 
 export interface SliderMethod {
   dataUrl: string | undefined | null
-  contentsType: string | undefined | null
+  contentsValue: string | undefined | null
 }
 
-const SliderItem = memo(({dataUrl, contentsType}: SliderMethod) => {
+const SliderItem = memo(({dataUrl, contentsValue}: SliderMethod) => {
   const {data: Data} = useSWR(dataUrl, fetcher, {
     dedupingInterval: 2000,
   });
@@ -26,6 +26,7 @@ const SliderItem = memo(({dataUrl, contentsType}: SliderMethod) => {
     <Swiper
       spaceBetween={20}
       slidesPerView={6}
+      loop={true}
     >
       {
         Data?.results?.map((item: MovieApiDataInterface) => {
@@ -36,12 +37,13 @@ const SliderItem = memo(({dataUrl, contentsType}: SliderMethod) => {
             className={'movieItemComponent'}
           >
 
-            <Link href={`/contents/${contentsType}/${item.id}`}>
+            <Link href={`/contents/${contentsValue}/${item.id}`}>
               <MovieItems className={`${movieItemHover !== '' ? 'on' : ''}`}>
-                <Image src={`${item.poster_path === null ? '/images/dummy.png' : IMG_URL + item.poster_path } `} alt={item.title} width={280} height={350} />
+                <Image src={`${item.poster_path === null ? '/images/dummy.png' : IMG_URL + item.poster_path} `}
+                       alt={item.title} width={280} height={350}/>
               </MovieItems>
             </Link>
-            {contentsType === 'tv' ?
+            {contentsValue === 'tv' ?
               <MovieItemTitleBox>
                 <div className={'movieName'}>{item.name}</div>
                 <span>{item.first_air_date} 방영일</span>

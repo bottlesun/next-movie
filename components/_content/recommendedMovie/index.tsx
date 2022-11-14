@@ -10,7 +10,7 @@ const RecommendedMovie = ({ value , id}: RecommendedMovie) => {
 
   return (
     <RecommendedWrap>
-      <ContentsList title={`Similar ${value}`} dataUrl={`/api/contents/${value}/${id}/similar`} contentsType={value}/>
+      <ContentsList title={`Similar ${value}`} dataUrl={`/api/contents/${value}/${id}/similar`} contentsValue={value}/>
     </RecommendedWrap>
   )
 }

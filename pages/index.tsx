@@ -17,8 +17,8 @@ export default function Home({fallback}: InferGetServerSidePropsType<typeof getS
 
       <div className={'container'}>
         <div className={'inner'}>
-          <ContentsList title={'Best Movie'} dataUrl={'/api/movies'} contentsType={'movie'}/>
-          <ContentsList title={'Best TV show'} dataUrl={'/api/tv'} contentsType={'tv'}/>
+          <ContentsList title={'Best Movie'} dataUrl={'/api/movie'} contentsValue={'movie'}/>
+          <ContentsList title={'Best TV show'} dataUrl={'/api/tv'} contentsValue={'tv'}/>
         </div>
       </div>
     </SWRConfig>
@@ -26,8 +26,8 @@ export default function Home({fallback}: InferGetServerSidePropsType<typeof getS
 }
 
 export const getStaticProps: GetServerSideProps = async () => {
-  const movieData = await fetcher('http://localhost:3000/api/movies');
-  const tvData = await fetcher('http://localhost:3000/api/tv')
+  const movieData = await fetcher('http://localhost:3000/api/movie');
+  const tvData = await fetcher('http://localhost:3000/api/tv');
 
 
   return {

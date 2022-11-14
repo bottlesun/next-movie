@@ -6,7 +6,7 @@ import {useRouter} from "next/router";
 import React from "react";
 import UserInfoSet from "./userInfoSet";
 import UserLoginSet from "./userLoginSet";
-import Search from "./search";
+import SearchBar from "./searchBar";
 
 
 const Navigation = ({menuOpen, setMenuOpen}: menuInterface) => {
@@ -20,7 +20,7 @@ const Navigation = ({menuOpen, setMenuOpen}: menuInterface) => {
         <Link href="/tv"><a className={router.pathname === '/tv' ? 'active' : ''}>TV 프로그램</a></Link>
         <Link href="/movie"><a className={router.pathname === '/movie' ? 'active' : ''}>영화</a></Link>
       </div>
-      <Search/>
+      <SearchBar/>
       {
         login ? <UserInfoSet menuOpen={menuOpen} setMenuOpen={setMenuOpen}/> : <UserLoginSet/>
       }
