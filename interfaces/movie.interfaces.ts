@@ -1,4 +1,4 @@
-export default interface MovieApiDataInterface {
+export interface MovieApiDataInterface {
   adult: boolean
   backdrop_path: string
   genre_ids: number[]
@@ -13,6 +13,15 @@ export default interface MovieApiDataInterface {
   video: boolean
   vote_average: number
   vote_count: number
-  first_air_date:number
-  name:string
+  first_air_date: number
+  name: string
+  key: string
+}
+
+
+export interface movieList {
+  title: string | undefined | null
+  dataUrl: string | undefined | null
+  contentsValue: string | undefined | null
+  videos: boolean | undefined
 }

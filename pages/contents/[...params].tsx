@@ -9,13 +9,10 @@ import useLogin from "../../hooks/useLogin";
 
 export type MovieDetailParams = [string, string] | [];
 
-
 const Contents = ({params}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   useLogin();
   const [value, id] = (params || []) as MovieDetailParams;
-  const {data: contentsData} = useSWR(`/api/contents/${value}/${id}`, fetcher, {
-    dedupingInterval: 2000,
-  })
+  const {data: contentsData} = useSWR(`/api/contents/${value}/${id}`, fetcher);
 
   return (
     <div>

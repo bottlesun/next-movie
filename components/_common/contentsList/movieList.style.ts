@@ -28,7 +28,9 @@ export const MovieItems = styled.div`
   transition: 0.3s;
   top: 0;
   cursor: pointer;
-
+  border-radius: 10px;
+  overflow: hidden;
+  
   &:hover {
     top: -10px;
   }

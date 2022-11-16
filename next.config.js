@@ -6,7 +6,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['image.tmdb.org', 'www.gravatar.com'],
+    domains: ['image.tmdb.org', 'www.gravatar.com','img.youtube.com'],
   },
 
   async redirects() {
@@ -39,7 +39,7 @@ const nextConfig = {
       },
       {
         source: '/api/search/:value/:query',
-        destination: `https://api.themoviedb.org/3/search/:value?api_key=${API_KEY}&language=ko-KR&query=:query&include_adult=false`,
+        destination: `https://api.themoviedb.org/3/search/:value?api_key=${API_KEY}&language=ko-KR&include_adult=false&query=:query`,
       },
     ]
   },

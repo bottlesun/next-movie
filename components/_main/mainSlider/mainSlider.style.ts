@@ -1,15 +1,14 @@
 import styled from '@emotion/styled';
 import {mainBgColor, bgColor} from "../../../styles/variable";
 
-export const SlideComponent = styled.div`
+export const SlideComponent = styled.article`
   width: 100%;
   margin-bottom: 50px;
   color: #fff;
 
 
   .swiper {
-    height: 100vh;
-    max-height: 800px;
+    height: 100%;
     position: relative;
 
     .swiper-wrapper {
@@ -25,22 +24,11 @@ export const SlideComponent = styled.div`
         align-items: center;
         background: ${bgColor};
 
-        & :before {
-          width: 100%;
-          height: 200px;
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          background: linear-gradient(to top, ${mainBgColor}, 45%, transparent);
-          z-index: -1;
-        }
-
 
         .movieImages {
           width: 100%;
           height: 100%;
-          background-position: center center;
+          background-position: top center;
           background-size: cover;
           background-repeat: no-repeat;
           z-index: 0;
@@ -58,20 +46,20 @@ export const SlideComponent = styled.div`
 
           & :before {
             width: 100%;
-            height: 150px;
+            height: 300px;
             content: "";
             position: absolute;
             bottom: 0;
             left: 0;
-            background: linear-gradient(to top, ${mainBgColor}, 5%, transparent);
+            background: linear-gradient(to top, ${mainBgColor}, 7%, transparent);
             z-index: -1;
           }
 
           .movieTextBox {
             box-sizing: border-box;
-            width: 90%;
+            width: 50%;
             margin: 0 5%;
-            padding: 10% 0;
+            padding: 30% 0 5%;
 
             & h3 {
               font-size: 2rem;
@@ -98,15 +86,3 @@ export const SlideComponent = styled.div`
   }
 `;
 
-export const MoveBg = styled.div`
-  width: 100%;
-  height: 100%;
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  left: 0;
-  filter: blur(110px);
-  z-index: -1;
-`

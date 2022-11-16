@@ -1,5 +1,5 @@
 import {Swiper, SwiperSlide} from "swiper/react";
-import MovieApiDataInterface from "../../../../interfaces/movie.interfaces";
+import {MovieApiDataInterface, movieList} from "../../../../interfaces/movie.interfaces";
 import {MovieItems, MovieItemTitleBox} from "../movieList.style";
 import useSWR from "swr";
 import fetcher from "../../../../utils/fetcher";
@@ -8,25 +8,19 @@ import {useState, memo} from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-export interface SliderMethod {
-  dataUrl: string | undefined | null
-  contentsValue: string | undefined | null
-}
 
-const SliderItem = memo(({dataUrl, contentsValue}: SliderMethod) => {
+const SliderItem = memo(({dataUrl, contentsValue}: movieList) => {
   const {data: Data} = useSWR(dataUrl, fetcher, {
     dedupingInterval: 2000,
   });
-
 
   const IMG_URL = 'https://image.tmdb.org/t/p/w500'
   const [movieItemHover, setMovieItemHover] = useState("");
 
   return (
     <Swiper
-      spaceBetween={20}
-      slidesPerView={6}
-      loop={true}
+      spaceBetween={24}
+      slidesPerView={7}
     >
       {
         Data?.results?.map((item: MovieApiDataInterface) => {

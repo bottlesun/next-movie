@@ -8,12 +8,11 @@ type genres = {
 }
 
 
-
-const ContentExplanation = ({...contentsData}  ) => {
+const ContentExplanation = ({...contentsData}) => {
 
   const IMG_URL = 'https://image.tmdb.org/t/p/w500/' + contentsData.poster_path;
   const DUMMY = contentsData.poster_path === undefined || contentsData.poster_path === null
-
+  const {title,name,release_date,first_air_date,overview} = contentsData
   return (
 
     <ContentExplanationWrap>
@@ -22,10 +21,10 @@ const ContentExplanation = ({...contentsData}  ) => {
         <div id="ContentExplanation">
           <Contents>
             <TitleBox>
-              <h2>{contentsData.title || contentsData.name} </h2>
-              <p>{contentsData.release_date || contentsData.first_air_date}
+              <h2>{title || name}</h2>
+              <p>{release_date || first_air_date}
                 {
-                  contentsData.release_date ? ' 개봉' : ' 방영일'
+                  release_date ? ' 개봉' : ' 방영일'
                 }
               </p>
             </TitleBox>
@@ -38,10 +37,10 @@ const ContentExplanation = ({...contentsData}  ) => {
               }
             </div>
             <p>
-              {contentsData.overview}
+              {overview}
             </p>
           </Contents>
-          <Image src={DUMMY ? '/images/dummy.png' : IMG_URL} alt={contentsData.title} width={280} height={350}/>
+          <Image src={DUMMY ? '/images/dummy.png' : IMG_URL} alt={title} width={280} height={350}/>
         </div>
       </div>
     </ContentExplanationWrap>

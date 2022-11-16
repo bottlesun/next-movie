@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import {boxShadow} from "../../../styles/variable";
 
 
-export const ContentExplanationWrap = styled.section`
+export const ContentExplanationWrap = styled.article`
   width: 100%;
   height: 100%;
   position: relative;
@@ -10,12 +10,12 @@ export const ContentExplanationWrap = styled.section`
 
   #ContentExplanation {
     display: flex;
-    max-width: 1300px;
     min-width: 30px;
     margin: 0 auto;
     justify-content: space-between;
     align-items: center;
     padding: 100px 20px 50px;
+    overflow: hidden;
 
     img {
       min-width: 280px!important;
@@ -65,7 +65,7 @@ export const Contents = styled.div`
       font-size: 13px;
       border-radius: 3px;
       cursor: default;
-      box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+      box-shadow: rgba(0, 0, 0, 0.15) 0 3px 3px 0;
     }
   }
 `
@@ -75,7 +75,7 @@ export const TitleBox = styled.div`
     margin-bottom: 0;
   }
   p{
-    margin: 0px 0 20px;
+    margin: 0 0 20px;
     font-size: 12px;
     color:rgba(255, 255, 255, 0.7)
   }
