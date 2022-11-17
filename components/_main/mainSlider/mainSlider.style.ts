@@ -44,14 +44,14 @@ export const SlideComponent = styled.article`
           position: relative;
           z-index: 1;
 
-          & :before {
+          :before {
             width: 100%;
             height: 300px;
             content: "";
             position: absolute;
             bottom: 0;
             left: 0;
-            background: linear-gradient(to top, ${mainBgColor}, 7%, transparent);
+            background: linear-gradient(to top, ${mainBgColor}, 10%, transparent);
             z-index: -1;
           }
 
@@ -60,6 +60,17 @@ export const SlideComponent = styled.article`
             width: 50%;
             margin: 0 5%;
             padding: 30% 0 5%;
+
+            :before {
+              width: 100%;
+              height: 300px;
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              background: linear-gradient(to top, ${mainBgColor}, 10%, transparent);
+              z-index: -1;
+            }
 
             & h3 {
               font-size: 2rem;
@@ -78,6 +89,18 @@ export const SlideComponent = styled.article`
               display: -webkit-box;
               -webkit-line-clamp: 3;
               -webkit-box-orient: vertical;
+
+
+              :before {
+                width: 100%;
+                height: 300px;
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background: linear-gradient(to top, ${mainBgColor}, 10%, transparent);
+                z-index: -1;
+              }
             }
           }
         }

@@ -1,17 +1,15 @@
 import Image from "next/image";
+import useToggle from "../../../../hooks/useToggle";
 import {SearchWrap} from "./searchbar.style";
 import SearchActive from "./searchActive";
-import {useCallback, useState} from "react";
 
 const searchIcon = '/images/icon_search.svg'
 const closeIcon = '/images/icon_x.svg'
 
 
 const SearchBar = () => {
-  const [toggleActive, setToggleActive] = useState(true);
-  const searchToggle = useCallback(() => {
-    setToggleActive(!toggleActive);
-  }, [setToggleActive, toggleActive])
+  const {searchToggle, toggleActive,setToggleActive} = useToggle();
+
 
   return (
     <SearchWrap>
@@ -21,7 +19,8 @@ const SearchBar = () => {
       </div>
 
       {
-        !toggleActive && <SearchActive searchToggle={searchToggle}/>
+        !toggleActive && <SearchActive searchToggle={searchToggle} toggleActive={toggleActive}
+                                       setToggleActive={setToggleActive} />
       }
     </SearchWrap>
   )

@@ -1,10 +1,12 @@
-import {Swiper, SwiperSlide} from "swiper/react";
 import {MovieApiDataInterface, movieList} from "../../../../interfaces/movie.interfaces";
-import {MovieItems, MovieItemTitleBox} from "../movieList.style";
+import {Navigation} from "swiper";
+import {Swiper, SwiperSlide} from "swiper/react";
+import {useState, memo} from "react";
 import useSWR from "swr";
 import fetcher from "../../../../utils/fetcher";
 import "swiper/css";
-import {useState, memo} from "react";
+import "swiper/css/navigation";
+import {MovieItems, MovieItemTitleBox} from "../movieList.style";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -21,6 +23,7 @@ const SliderItem = memo(({dataUrl, contentsValue}: movieList) => {
     <Swiper
       spaceBetween={24}
       slidesPerView={7}
+      navigation={true} modules={[Navigation]}
     >
       {
         Data?.results?.map((item: MovieApiDataInterface) => {

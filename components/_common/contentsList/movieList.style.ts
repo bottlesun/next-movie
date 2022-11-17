@@ -16,6 +16,9 @@ export const MovieListComponent = styled.section`
   .movieItemComponent{
     width: 230px!important;
   }
+  .videoItemComponent{
+    width: 480px!important;
+  }
 `;
 
 

@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import {bgColor, boxShadow} from "../../../../styles/variable";
 
 export const SearchWrap = styled.div`
   .icon-button {
@@ -75,6 +74,7 @@ export const SearchContentsImgUl = styled.ul`
 
   li {
     width: 100%;
+    max-width: 160px;
     display: flex;
     align-items: center;
     justify-content: center;

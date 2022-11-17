@@ -28,12 +28,43 @@ export const ModalBg = styled.article`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    .modalBody {
+      padding: 30px;
+      max-height: 100px;
+    }
   }
 
-  .modalBody {
-    padding: 30px;
-    max-height: 100px;
+  .modalVideoComponent {
+    width: 100%;
+    max-width: 600px;
+    min-width: 250px;
+    height: 100%;
+    max-height: 400px;
+    background: ${bgColor};
+    box-shadow: ${boxShadow};
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+
+
+    .modalBody {
+      height: 100%;
+      width: 100%;
+
+      iframe{
+        width: 100%;
+        height: 100%;
+        border: none;
+        
+      }
+    }
+    
   }
+
 
   .modalFooter {
 

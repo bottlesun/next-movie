@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import {SlideComponent} from "./mainSlider.style";
 import {Button} from "../../_common/commonButton/commonButton.style";
-import MoviApiDatainterface from "../../../interfaces/movie.interfaces";
+import {MovieApiDataInterface} from "../../../interfaces/movie.interfaces";
 import Link from "next/link";
 
 const MainSlider = () => {
@@ -29,7 +29,7 @@ const MainSlider = () => {
         modules={[Autoplay]}
       >
         {
-          movieData?.results?.slice(0, 5)?.map((movieData: MoviApiDatainterface) => {
+          movieData?.results?.slice(0, 5)?.map((movieData: MovieApiDataInterface) => {
             return <SwiperSlide key={movieData.id}>
               <div className={"movieImages"}
                    style={{backgroundImage: "url(" + `${IMG_URL}${movieData.backdrop_path}` + ")"}}>
@@ -42,7 +42,6 @@ const MainSlider = () => {
                         {'More'}
                       </Button>
                     </Link>
-
                   </div>
                 </div>
 
