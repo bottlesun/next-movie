@@ -16,7 +16,7 @@ const Navigation = ({menuOpen, setMenuOpen}: menuInterface) => {
   return (
     <NavList>
       <div className="menus">
-        <Link href="/"><a><h3>MOVING</h3></a></Link>
+        <Link href="/"><a><h3 className={'logo'}>MOVING</h3></a></Link>
         <Link href="/tv"><a className={router.pathname === '/tv' ? 'active' : ''}>TV 프로그램</a></Link>
         <Link href="/movie"><a className={router.pathname === '/movie' ? 'active' : ''}>영화</a></Link>
       </div>

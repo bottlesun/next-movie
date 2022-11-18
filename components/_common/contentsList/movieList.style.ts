@@ -9,18 +9,19 @@ export const MovieListComponent = styled.section`
   .swiper {
     overflow: visible;
   }
+
   .swiper-slide {
-   display: block;
+    display: block;
   }
-  
-  .movieItemComponent{
-    width: 230px!important;
+
+  .movieItemComponent {
+    width: 230px !important;
   }
-  .videoItemComponent{
-    width: 480px!important;
+
+  .videoItemComponent {
+    width: 480px !important;
   }
 `;
-
 
 
 export const MovieItems = styled.div`
@@ -33,16 +34,16 @@ export const MovieItems = styled.div`
   cursor: pointer;
   border-radius: 10px;
   overflow: hidden;
-  
+
   &:hover {
     top: -10px;
   }
-  
+
 
   img {
     width: 100%;
     height: 100%;
-    min-height: 350px!important;
+    min-height: 350px !important;
     object-fit: cover;
   }
 `
@@ -55,14 +56,14 @@ export const MovieItemTitleBox = styled.div`
     overflow: hidden;
     text-overflow: ellipsis;
     margin: 5px 0;
-    font-size:1.3rem;
+    font-size: var(--font-size-sm);
     font-weight: 500;
   }
-  
+
   span {
     display: block;
     width: 100%;
-    font-size: 1rem;
+    font-size: var(--font-size-xxsm);
     text-align: right;
     transition: 0.3s;
     color: rgba(255, 255, 255, 0.5);

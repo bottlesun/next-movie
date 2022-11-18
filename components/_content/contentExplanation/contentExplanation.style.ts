@@ -62,7 +62,7 @@ export const Contents = styled.div`
       color: #ebebeb;
       border: 1px solid #ebebeb;
       padding: 4px 15px;
-      font-size: 13px;
+      font-size: var(--font-size-xsm);
       border-radius: 3px;
       cursor: default;
       box-shadow: rgba(0, 0, 0, 0.15) 0 3px 3px 0;

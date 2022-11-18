@@ -8,8 +8,14 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     background-color: black;
     overflow-x: hidden;
-    font-size: 10px;
+}
 
+:root {
+    --font-size-lg: max(2rem, min(4vw, 3.5rem));
+    --font-size-md: max(1.5rem, min(3vw, 2.5rem));
+    --font-size-sm: max(1rem, min(2vw, 1.5rem));
+    --font-size-xsm: max(0.8rem, min(1.2vw, 0.8rem));
+    --font-size-xxsm: max(0.5rem, min(1vw, 0.5rem));
 }
 
 li, ol {
@@ -24,7 +30,7 @@ a {
 * {
     box-sizing: border-box;
     color: #fff;
-    font-size: 1.5rem
+    font-size: var(--font-size-sm);
 }
 
 .container {
@@ -83,8 +89,8 @@ a {
 }
 
 .logo {
-    width: 150px;
-    font-size: 3rem;
+    width: 100%;
+    font-size: var(--font-size-lg);
     letter-spacing: 2px;
     cursor: pointer;
     margin: 0 10px;
@@ -148,8 +154,9 @@ a {
     opacity: 0;
     transition: 0.3s;
 }
-.swiper-button-disabled{
-    opacity: 0!important;
+
+.swiper-button-disabled {
+    opacity: 0 !important;
 }
 
 .swiper-button-prev {
@@ -162,11 +169,16 @@ a {
 
 .swiper-button-next:hover {
     opacity: 1;
-    background: linear-gradient(to left, rgba(0,0,0,8) 10%, transparent);
+    background: linear-gradient(to left, rgba(0, 0, 0, 8) 10%, transparent);
 }
 
 .swiper-button-prev:hover {
     opacity: 1;
-    background: linear-gradient(to right, rgba(0,0,0,8) 10%, transparent);
+    background: linear-gradient(to right, rgba(0, 0, 0, 8) 10%, transparent);
+}
 
+@media (min-width: 1450px ) {
+    html {
+        font-size: 0.8vw;
+    }
 }

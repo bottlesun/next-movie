@@ -42,6 +42,7 @@ export const UserInfo = styled.ul`
     align-items: center;
     cursor: pointer;
     gap:10px;
+    font-size:var(--font-size-xsm);
 
     span {
       color: rgba(255, 255, 255, 0.8);
@@ -63,7 +64,7 @@ export const UserInfo = styled.ul`
       display: block;
       color: rgba(255,255,255,0.8);
       transition: 0.2s;
-      font-size: 1.2rem;
+      font-size: var(--font-size-xsm)
     }
 
     &:hover {

@@ -9,7 +9,7 @@ export const UserLoginNav = styled.div `
     width: 100%;
     height: 100%;
     transition: 0.4s;
-    font-size: 1.4rem;
+    font-size: var(--font-size-sm);
     &:hover{
       color: rgba(255,255,255,0.8);
     }

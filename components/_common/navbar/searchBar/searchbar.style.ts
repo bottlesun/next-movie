@@ -94,7 +94,7 @@ export const SearchContentsImgUl = styled.ul`
     span {
       width: 100%;
       display: block;
-      font-size: 10px;
+      font-size:var(--font-size-xsm);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -108,14 +108,12 @@ export const SearchContentsTextUl = styled.ul`
   padding: 0;
   min-width: 500px;
   max-width: 800px;
-  width: 100%;
   margin: 30px auto 0;
 
   li {
     width: 100%;
-    max-width: 200px;
     margin-bottom: 8px;
-    font-size: 13px;
+    font-size: var(--font-size-xsm);
     cursor: pointer;
     position: relative;
   }

@@ -20,7 +20,7 @@ const UserInfoSet = ({setMenuOpen, menuOpen}: menuInterface) => {
       <Image src={'https:' + gravatar.url(user[0].email, {s: '30px', d: 'retro'})} alt={user[0].name}
              width={20}
              height={20}/>
-      <div>{user[0].name}님!</div>
+      <div className={'userId'}>{user[0].name}님!</div>
 
       {
         menuOpen && <Menu/>

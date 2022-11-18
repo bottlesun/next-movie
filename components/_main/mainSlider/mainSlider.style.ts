@@ -73,7 +73,7 @@ export const SlideComponent = styled.article`
             }
 
             & h3 {
-              font-size: 2rem;
+              font-size: var(--font-size-md);
               margin-bottom: 5px;
               white-space: nowrap;
               text-overflow: ellipsis;

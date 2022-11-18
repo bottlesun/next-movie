@@ -3,7 +3,8 @@ import {bgColor} from "../../../styles/variable";
 
 export const Button = styled.a`
   width: 100px;
-  padding: 8px 25px;
+  padding: 8px 0;
+  font-size: 15px;
   border: 1px solid #eaeaea;
   background: none;
   border-radius: 5px;

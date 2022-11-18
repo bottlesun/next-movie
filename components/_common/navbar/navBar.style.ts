@@ -6,7 +6,6 @@ export const NavList = styled.nav`
   align-items: center;
   width: 100%;
   height: 100px;
-  font-size: 15px;
   color: #fff;
   background: linear-gradient(${bgColor}, 55%, transparent);
   padding: 0 20px;
@@ -20,18 +19,11 @@ export const NavList = styled.nav`
     justify-content: flex-start;
     margin-right: 20px;
     z-index: 999;
-
-    h3 {
-      width: 150px;
-      font-size: 3rem;
-      letter-spacing: 2px;
-      cursor: pointer;
-      margin: 0 10px;
-    }
+    
 
     a {
       margin: 10px;
-      font-size: 1.5rem;
+      font-size: var(--font-size-sm);
       color: rgba(255, 255, 255, 0.7);
 
       :hover {
