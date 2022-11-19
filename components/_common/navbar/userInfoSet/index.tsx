@@ -17,11 +17,9 @@ const UserInfoSet = ({setMenuOpen, menuOpen}: menuInterface) => {
 
   return (
     <UserInfoNav className="user_info" onClick={menuOpenHandler}>
-      <Image src={'https:' + gravatar.url(user[0].email, {s: '30px', d: 'retro'})} alt={user[0].name}
-             width={20}
-             height={20}/>
-      <div className={'userId'}>{user[0].name}님!</div>
-
+      <Image src={'https:' + gravatar.url(user[0].email, {s: '20px', d: 'retro'})} alt={user[0].name}
+             width={25}
+             height={25}/>
       {
         menuOpen && <Menu/>
       }

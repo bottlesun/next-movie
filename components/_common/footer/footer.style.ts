@@ -8,7 +8,7 @@ export const FooterComponent = styled.footer`
 
   h5 {
     padding: 50px 0 0;
-    font-size: var(--font-size-sm);
+    font-size: 13px;
     color: rgba(255, 255, 255, 0.5);
   }
 `

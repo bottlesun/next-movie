@@ -44,7 +44,7 @@ const SearchActive = ({searchToggle, toggleActive, setToggleActive}: searchToggl
       <SearchContentsImgUl>
         {
           searchData?.results?.slice(0, 5)?.map((searchItemImg: any) => {
-              return <Link key={searchItemImg.id} href={` / contents /${searchItemImg.media_type}/${searchItemImg.id}`}>
+              return <Link key={searchItemImg.id} href={` /contents/${searchItemImg.media_type}/${searchItemImg.id}`}>
                 <li>
                   <p>
                     <Image
