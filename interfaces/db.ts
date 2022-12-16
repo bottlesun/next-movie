@@ -1,4 +1,4 @@
-import MovieApiDataInterface from "./movie.interfaces";
+import {MovieApiDataInterface} from "./movie.interfaces";
 
 export interface IUser {
   id: string ;

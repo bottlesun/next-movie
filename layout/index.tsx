@@ -1,10 +1,10 @@
 import Footer from "../components/_common/footer";
 import NavBar from "../components/_common/navbar";
-import React, {useCallback, useState} from "react";
+import {ReactNode, useCallback, useState} from "react";
 import useLoginStore from "../stores/loginStores";
 
 type AppLayoutProps = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 // layout
@@ -20,9 +20,8 @@ export default function Layout({children}: AppLayoutProps) {
     setMenuOpen(false);
   }, [setMenuOpen])
 
-
   return (
-    <div onClick={onCloseModal} className={'layout'}>
+    <section onClick={onCloseModal} className={'layout'}>
       {
         login && <NavBar setMenuOpen={setMenuOpen} menuOpen={menuOpen}/>
       }
@@ -31,6 +30,6 @@ export default function Layout({children}: AppLayoutProps) {
       </div>
 
       <Footer/>
-    </div>
+    </section>
   )
 }

@@ -12,7 +12,7 @@ const ContentExplanation = ({...contentsData}) => {
 
   const IMG_URL = 'https://image.tmdb.org/t/p/w500/' + contentsData.poster_path;
   const DUMMY = contentsData.poster_path === undefined || contentsData.poster_path === null
-  const {title,name,release_date,first_air_date,overview} = contentsData
+  const {title, name, release_date, first_air_date, overview} = contentsData
   return (
 
     <ContentExplanationWrap>
@@ -40,7 +40,9 @@ const ContentExplanation = ({...contentsData}) => {
               {overview}
             </p>
           </Contents>
-          <Image src={DUMMY ? '/images/dummy.png' : IMG_URL} alt={title} width={280} height={350}/>
+          <div className={'imageBox'}>
+            <Image src={DUMMY ? '/images/dummy.png' : IMG_URL} alt={title}    layout={'fill'}/>
+          </div>
         </div>
       </div>
     </ContentExplanationWrap>

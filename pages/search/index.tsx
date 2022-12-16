@@ -8,7 +8,7 @@ import fetcher from "../../utils/fetcher";
 import {MovieComponent} from "../movie/movie.style";
 
 import {useRouter} from 'next/router'
-import {SearchLength, SearchWrap} from "./search.style";
+import {SearchLength,SearchWrap} from "./search.style";
 
 const Search = () => {
   const router = useRouter()

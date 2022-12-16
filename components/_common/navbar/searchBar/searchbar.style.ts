@@ -1,4 +1,7 @@
 import styled from '@emotion/styled';
+import {theme} from "../../../../styles/theme";
+
+const {tablet} = theme;
 
 export const SearchWrap = styled.div`
   .icon-button {
@@ -18,11 +21,10 @@ export const SearchActiveWrap = styled.section`
 
   .searchInputGuide {
     width: 100%;
-    min-width: 500px;
     max-width: 800px;
     margin: 0 auto;
-    
-    .searchWrap{
+
+    .searchWrap {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -33,6 +35,7 @@ export const SearchActiveWrap = styled.section`
 
     .searchInput {
       width: 100%;
+
       input {
         width: 100%;
         height: 30px;
@@ -40,12 +43,14 @@ export const SearchActiveWrap = styled.section`
         background: none;
         position: relative;
         margin: 0 auto;
-
+        font-size: var(--font-size-sm);
         &:focus {
           outline: none;
         }
       }
+
     }
+
     button {
       width: 30px;
       height: 30px;
@@ -58,6 +63,12 @@ export const SearchActiveWrap = styled.section`
 
     hr {
       background: #fff;
+    }
+  }
+
+  ${tablet} {
+    .searchInputGuide{
+      width: 95%;
     }
   }
 `
@@ -90,11 +101,10 @@ export const SearchContentsImgUl = styled.ul`
       margin: 0;
     }
 
-
     span {
       width: 100%;
       display: block;
-      font-size:var(--font-size-xsm);
+      font-size: var(--font-size-xsm);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;

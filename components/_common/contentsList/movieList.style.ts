@@ -63,7 +63,7 @@ export const MovieItemTitleBox = styled.div`
   span {
     display: block;
     width: 100%;
-    font-size: var(--font-size-xxsm);
+    font-size: var(--font-size-xsm);
     text-align: right;
     transition: 0.3s;
     color: rgba(255, 255, 255, 0.5);
