@@ -1,4 +1,4 @@
-import router from "next/router";
+import {useRouter} from "next/router";
 import useSWR from "swr";
 import {searchToggleInterface} from "../../../../../hooks/useToggle";
 import fetcher from "../../../../../utils/fetcher";
@@ -10,6 +10,7 @@ import Link from "next/link";
 
 const SearchActive = ({searchToggle, toggleActive, setToggleActive}: searchToggleInterface) => {
   const [text, setText] = useState('');
+  const router = useRouter();
   const onChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value)
   }, [setText])
@@ -24,7 +25,7 @@ const SearchActive = ({searchToggle, toggleActive, setToggleActive}: searchToggl
   }
 
   return (
-    <SearchActiveWrap onKeyDown={onEnterEventKeyPress} onClick={searchToggle}>
+    <SearchActiveWrap onKeyDown={onEnterEventKeyPress} onClick={() => setToggleActive(!toggleActive)}>
       <div className={'searchInputGuide'}>
         <div className={'searchWrap'}>
           <div className={'searchInput'}

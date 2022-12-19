@@ -1,5 +1,8 @@
 import styled from '@emotion/styled';
-import {bgColor, boxShadow} from "../../../styles/variable";
+import {bgColor} from "../../../styles/variable";
+import {theme} from "../../../styles/theme";
+
+const {tablet} = theme;
 
 export const NavList = styled.nav`
   display: flex;
@@ -11,7 +14,7 @@ export const NavList = styled.nav`
   padding: 0 20px;
   position: absolute;
   z-index: 999;
-  
+
   .menus {
     width: 100%;
     display: flex;
@@ -19,10 +22,10 @@ export const NavList = styled.nav`
     justify-content: flex-start;
     margin-right: 20px;
     z-index: 999;
-    
+    gap: 20px;
+
 
     a {
-      margin: 10px;
       font-size: var(--font-size-sm);
       color: rgba(255, 255, 255, 0.7);
 
@@ -34,6 +37,19 @@ export const NavList = styled.nav`
       &.active {
         color: #fff;
         font-weight: 500;
+      }
+    }
+  }
+
+  ${tablet} {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 50%, transparent 100%);
+
+    .menus {
+      display: block;
+      padding-bottom: 20px;
+
+      a {
+        margin-left: 10px;
       }
     }
   }

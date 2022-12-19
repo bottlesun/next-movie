@@ -1,7 +1,7 @@
 import {Dispatch, MouseEventHandler, useCallback, useState} from "react";
 
 export interface searchToggleInterface {
-  searchToggle: MouseEventHandler<HTMLImageElement | HTMLLIElement>
+  searchToggle: MouseEventHandler<HTMLImageElement | HTMLLIElement | HTMLDivElement> | undefined
   setToggleActive: Dispatch<boolean>
   toggleActive: boolean
 }

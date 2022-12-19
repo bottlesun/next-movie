@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
-import {bgColor, boxShadow} from "../../styles/variable";
+import {theme} from "../../styles/theme";
 
+const {tablet} = theme;
 
 export const SearchWrap = styled.div`
   .searchInputGuide {
     width: 100%;
-    min-width: 500px;
     max-width: 800px;
     margin: 0 auto;
 
@@ -47,6 +47,12 @@ export const SearchWrap = styled.div`
 
     hr {
       background: #fff;
+    }
+  }
+
+  ${tablet} {
+    .searchInputGuide{
+      width: 90%;
     }
   }
 `

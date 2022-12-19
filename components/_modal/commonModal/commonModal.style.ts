@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import {bgColor, boxShadow, mainBgColor} from "../../../styles/variable";
+import {bgColor, boxShadow} from "../../../styles/variable";
 
 
 export const ModalBg = styled.article`

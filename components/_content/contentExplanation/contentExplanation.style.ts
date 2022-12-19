@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import {boxShadow} from "../../../styles/variable";
+import {theme} from "../../../styles/theme";
 
+const {tablet} = theme;
 
 export const ContentExplanationWrap = styled.article`
   width: 100%;
@@ -17,13 +19,25 @@ export const ContentExplanationWrap = styled.article`
     padding: 100px 20px 50px;
     overflow: hidden;
 
-    img {
-      min-width: 280px!important;
-      min-height: 350px!important;
-      object-fit: contain;
+    .imageBox{
+      width: 300px;
+      height: 420px;
+      position: relative;
       box-shadow: ${boxShadow};
+      
+      img {
+        object-fit: fill;
+      } 
     }
   }
+
+  ${tablet} {
+    #ContentExplanation {
+      flex-direction: column-reverse;
+      gap: 20px;
+    }
+  }
+
 `
 
 export const BG = styled.article`
@@ -40,8 +54,9 @@ export const BG = styled.article`
 
 export const Contents = styled.div`
   max-width: 600px;
+
   h2 {
-    font-size: 30px;
+    font-size: max(1.8rem, min(1.5vw, 2.5rem));
     margin-bottom: 20px;
   }
 
@@ -49,7 +64,7 @@ export const Contents = styled.div`
     max-width: 400px;
     color: #ebebeb;
     margin-top: 25px;
-    font-size: 14px;
+    font-size: max(1.2rem, min(1vw, 1.5rem));
     line-height: 1.5em;
   }
 
@@ -61,23 +76,36 @@ export const Contents = styled.div`
     span {
       color: #ebebeb;
       border: 1px solid #ebebeb;
-      padding: 4px 15px;
+      padding: 5px 8%;
+      text-align: center;
       font-size: var(--font-size-xsm);
       border-radius: 3px;
       cursor: default;
       box-shadow: rgba(0, 0, 0, 0.15) 0 3px 3px 0;
     }
   }
+
+  ${tablet} {
+.genres{
+  span{
+    padding: 0;
+    width: 50px;
+    height: 20px;
+    line-height: 20px;
+  }
+}
+  }
 `
 
 export const TitleBox = styled.div`
-  h2{
+  h2 {
     margin-bottom: 0;
   }
-  p{
+
+  p {
     margin: 0 0 20px;
     font-size: 12px;
-    color:rgba(255, 255, 255, 0.7)
+    color: rgba(255, 255, 255, 0.7)
   }
 `
 
