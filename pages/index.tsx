@@ -10,6 +10,7 @@ import useLogin from "../hooks/useLogin";
 export default function Home({fallback}: InferGetServerSidePropsType<typeof getStaticProps>) {
   useLogin();
 
+
   return (
     <SWRConfig value={fallback}>
       <SEO title={'Main'}/>
@@ -17,8 +18,8 @@ export default function Home({fallback}: InferGetServerSidePropsType<typeof getS
 
       <div className={'container'}>
         <div className={'inner'}>
-          <ContentsList title={'Best Movie'} dataUrl={'/api/movie'} contentsValue={'movie'}/>
-          <ContentsList title={'Best TV show'} dataUrl={'/api/tv'} contentsValue={'tv'}/>
+          <ContentsList title={'Best Movie'} dataUrl={'/api/movie'} contentsValue={'movie'} videos={false}/>
+          <ContentsList title={'Best TV show'} dataUrl={'/api/tv'} contentsValue={'tv'} videos={false}/>
         </div>
       </div>
     </SWRConfig>

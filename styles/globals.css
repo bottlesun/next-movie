@@ -1,4 +1,4 @@
-@import url('https://webfontworld.github.io/SCoreDream/SCoreDream.css');
+@import url("https://webfontworld.github.io/SCoreDream/SCoreDream.css");
 
 html,
 body {
@@ -8,14 +8,14 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     background-color: black;
     overflow-x: hidden;
+    font-size: 10px;
 }
 
 :root {
-    --font-size-lg: max(2rem, min(4vw, 3.5rem));
-    --font-size-md: max(1.5rem, min(3vw, 2.5rem));
-    --font-size-sm: max(0.9rem, min(1.6vw, 1.3rem));
-    --font-size-xsm: max(0.8rem, min(1.2vw, 0.8rem));
-    --font-size-xxsm: max(0.5rem, min(1vw, 0.5rem));
+    --font-size-lg: max(2.5rem, min(2vw, 4rem));
+    --font-size-md: max(2rem, min(1.5vw, 2rem));
+    --font-size-sm: max(1.5rem, min(1vw, 1.8rem));
+    --font-size-xsm: max(1rem, min(0.5vw, 1.3rem));
 }
 
 li, ol {
@@ -30,7 +30,7 @@ a {
 * {
     box-sizing: border-box;
     color: #fff;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-md);
 }
 
 .container {
@@ -45,7 +45,7 @@ a {
 }
 
 .movieListTitle {
-    font-size: 25px;
+    font-size: var(--font-size-lg)
 }
 
 .swiper {
@@ -77,20 +77,9 @@ a {
 }
 
 
-@media (prefers-color-scheme: dark) {
-    html {
-        color-scheme: dark;
-    }
-
-    body {
-        color: white;
-        background: black;
-    }
-}
-
 .logo {
     width: 100%;
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-lg);
     letter-spacing: 2px;
     cursor: pointer;
     margin: 0 10px;
@@ -106,7 +95,7 @@ a {
     transform: translate(-50%, -50%);
     z-index: 50;
     border-radius: 9999px;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0 4px 16px, rgba(17, 17, 26, 0.05) 0 8px 32px;
 }
 
 .icon-wrap:hover .play-button {
@@ -177,8 +166,9 @@ a {
     background: linear-gradient(to right, rgba(0, 0, 0, 8) 10%, transparent);
 }
 
-@media (min-width: 1450px ) {
-    html {
-        font-size: 0.8vw;
+@media screen and (max-width: 768px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none !important;
     }
 }
