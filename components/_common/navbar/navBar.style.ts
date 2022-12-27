@@ -14,8 +14,9 @@ export const NavList = styled.nav`
   padding: 0 20px;
   position: absolute;
   z-index: 999;
-
+  
   .logo {
+    font-size: var(--font-size-lg) !important;
     letter-spacing: 2px;
     cursor: pointer;
     margin: 0 10px;
