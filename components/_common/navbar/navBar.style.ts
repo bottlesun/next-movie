@@ -15,6 +15,17 @@ export const NavList = styled.nav`
   position: absolute;
   z-index: 999;
 
+  .logo {
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin: 0 10px;
+
+    a {
+      font-size: var(--font-size-lg) !important;
+    }
+  }
+
+
   .menus {
     width: 100%;
     display: flex;
@@ -44,9 +55,14 @@ export const NavList = styled.nav`
   ${tablet} {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 50%, transparent 100%);
 
+    .logo {
+      a {
+        margin: 0 !important;
+      }
+    }
+
     .menus {
       display: block;
-      padding-bottom: 20px;
 
       a {
         margin-left: 10px;
