@@ -10,9 +10,8 @@ const ContentsList = ({title, dataUrl, contentsValue, videos}: movieList) => {
       <h3 className={'movieListTitle'}>{title}</h3>
       {
         videos ?
-          <VideosItem dataUrl={dataUrl} contentsValue={undefined} title={undefined} videos={undefined}/> :
-          <SliderItem dataUrl={dataUrl} contentsValue={contentsValue} title={undefined} videos={undefined}/>
-
+          <VideosItem dataUrl={dataUrl} /> :
+          <SliderItem dataUrl={dataUrl} contentsValue={contentsValue} />
       }
     </MovieListComponent>
   )

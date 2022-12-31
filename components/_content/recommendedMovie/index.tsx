@@ -1,5 +1,3 @@
-import useSWR from "swr";
-import fetcher from "../../../utils/fetcher";
 import {RecommendedWrap} from "./recommendedMovie.style";
 import ContentsList from "../../_common/contentsList";
 
@@ -11,8 +9,7 @@ interface RecommendedMovie {
 const RecommendedMovie = ({value, id}: RecommendedMovie) => {
   return (
     <RecommendedWrap>
-      <ContentsList title={`Similar ${value}`} dataUrl={`/api/contents/${value}/${id}/similar`} contentsValue={value}
-                    videos={false}/>
+      <ContentsList title={`Similar ${value}`} dataUrl={`/api/contents/${value}/${id}/similar`} contentsValue={value}/>
       <ContentsList title={`Media`} dataUrl={`/api/contents/${value}/${id}/videos`} contentsValue={value}
                     videos={true}/>
     </RecommendedWrap>

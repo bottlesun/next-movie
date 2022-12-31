@@ -20,8 +20,8 @@ export interface MovieApiDataInterface {
 
 
 export interface movieList {
-  title: string | undefined | null
+  title?: string | undefined | null
   dataUrl: string | undefined | null
-  contentsValue: string | undefined | null
-  videos: boolean | undefined
+  contentsValue?: string | undefined | null
+  videos?: boolean | undefined
 }

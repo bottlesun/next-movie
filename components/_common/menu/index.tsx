@@ -7,8 +7,6 @@ import user from "../../../data/dummy";
 import useLoginStore from "../../../stores/loginStores";
 import {UserInfo} from "../navbar/userInfoSet/userInfoSet.style";
 
-
-
 const Menu = () => {
   const {setLogin} = useLoginStore()
 
