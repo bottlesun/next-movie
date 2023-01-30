@@ -70,6 +70,7 @@ export const Contents = styled.div`
 
   .genres {
     display: flex;
+    flex-wrap: wrap;
     justify-content: start;
     gap: 10px;
 

@@ -23,7 +23,13 @@ export const NavList = styled.nav`
 
     a {
       font-size: var(--font-size-lg) !important;
+      color: rgba(255, 255, 255, 1)!important;
+
+      :hover {
+        font-weight: 700!important;
+      }
     }
+
   }
 
 
@@ -43,12 +49,10 @@ export const NavList = styled.nav`
 
       :hover {
         color: #fff;
-        font-weight: 500;
       }
 
       &.active {
         color: #fff;
-        font-weight: 500;
       }
     }
   }
