@@ -13,10 +13,10 @@ const Contents = ({params}: InferGetServerSidePropsType<typeof getServerSideProp
   useLogin();
   const [value, id] = (params || []) as MovieDetailParams;
   const {data: contentsData} = useSWR(`/api/contents/${value}/${id}`, fetcher);
-
+  const title = contentsData?.title === undefined ? contentsData?.name : contentsData?.title;
   return (
     <div>
-      <SEO title={contentsData?.title}/>
+      <SEO title={title}/>
       <ContentExplanation {...contentsData} id={id} value={value}/>
       <hr className={'line'}/>
       <RecommendedMovie id={id} value={value}/>
