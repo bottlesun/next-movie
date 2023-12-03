@@ -37,7 +37,7 @@ const SliderItem = memo(({dataUrl, contentsValue}: movieList) => {
 
             <Link href={`/contents/${contentsValue}/${item.id}`}>
               <MovieItems className={`${movieItemHover !== '' ? 'on' : ''}`}>
-                <Image src={`${item.poster_path === null || item.poster_path === undefined  ? '/images/dummy.png' : IMG_URL + item.poster_path} `}
+                <Image src={`${item.poster_path === null || item.poster_path === undefined  ? '/images/dummy.png' : IMG_URL + item.poster_path}`}
                        alt={item.title} width={280} height={350}/>
               </MovieItems>
             </Link>
