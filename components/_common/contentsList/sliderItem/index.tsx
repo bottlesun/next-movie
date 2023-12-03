@@ -16,7 +16,7 @@ const SliderItem = memo(({dataUrl, contentsValue}: movieList) => {
     dedupingInterval: 2000,
   });
 
-  const IMG_URL = 'https://image.tmdb.org/t/p/w500'
+  const IMG_URL = 'https://image.tmdb.org/t/p/w500/'
   const [movieItemHover, setMovieItemHover] = useState("");
 
   return (
