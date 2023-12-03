@@ -29,16 +29,16 @@ export default function Home({fallback}: InferGetServerSidePropsType<typeof getS
 }
 
 export const getStaticProps: GetServerSideProps = async () => {
-  const movieData = await fetcher(`${serverUrl}/api/movie`);
-  const tvData = await fetcher(`${serverUrl}/api/tv`);
+  // const movieData = await fetcher(`${serverUrl}/api/movie`);
+  // const tvData = await fetcher(`${serverUrl}/api/tv`);
 
 
   return {
     props: {
       fallback: {
-        [unstable_serialize(['/api/movie/', 'article', 1])]: movieData,
-        [unstable_serialize(['/api/contents/:id', 'article', 2])]: movieData,
-        [unstable_serialize(['/api/tv', 'article', 3])]: tvData,
+        // [unstable_serialize(['/api/movie/', 'article', 1])]: movieData,
+        // [unstable_serialize(['/api/contents/:id', 'article', 2])]: movieData,
+        // [unstable_serialize(['/api/tv', 'article', 3])]: tvData,
       }
     }
   }
