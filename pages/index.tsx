@@ -6,6 +6,8 @@ import fetcher from "../utils/fetcher";
 import ContentsList from "../components/_common/contentsList";
 import useLogin from "../hooks/useLogin";
 
+const serverUrl = process.env.NODE_ENV === 'production' ? 'https://bottlesun.github.io/next-movie/' : 'http://localhost:3000';
+
 
 export default function Home({fallback}: InferGetServerSidePropsType<typeof getStaticProps>) {
   useLogin();
@@ -27,8 +29,8 @@ export default function Home({fallback}: InferGetServerSidePropsType<typeof getS
 }
 
 export const getStaticProps: GetServerSideProps = async () => {
-  const movieData = await fetcher('http://localhost:3000/api/movie');
-  const tvData = await fetcher('http://localhost:3000/api/tv');
+  const movieData = await fetcher(`${serverUrl}/api/movie`);
+  const tvData = await fetcher(`${serverUrl}/api/tv`);
 
 
   return {

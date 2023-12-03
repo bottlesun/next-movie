@@ -1,7 +1,7 @@
 import ContentsList from "../../components/_common/contentsList";
 import SEO from "../../components/_common/seo";
 import useLogin from "../../hooks/useLogin";
-import {MovieComponent} from "./movie.style";
+import {MovieComponent} from "../../styles/movie.style";
 
 
 const Movie = () => {

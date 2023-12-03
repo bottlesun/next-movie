@@ -5,10 +5,10 @@ import ContentsList from "../../components/_common/contentsList";
 import SEO from "../../components/_common/seo";
 import useLogin from "../../hooks/useLogin";
 import fetcher from "../../utils/fetcher";
-import {MovieComponent} from "../movie/movie.style";
+import {MovieComponent} from "../../styles/movie.style";
 
-import {useRouter} from 'next/router'
-import {SearchLength,SearchWrap} from "./search.style";
+import {useRouter} from "next/dist/client/router";
+import {SearchLength,SearchWrap} from "../../styles/search.style";
 
 const Search = () => {
   const router = useRouter()

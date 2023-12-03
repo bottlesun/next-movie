@@ -1,4 +1,4 @@
-import {JoinTitle} from "../../../pages/user/login/login.style";
+import {JoinTitle} from "../../../styles/login.style";
 import {ChangeEvent, FocusEvent} from "react";
 
 export interface JoinInputComponent {

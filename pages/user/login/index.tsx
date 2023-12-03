@@ -2,7 +2,7 @@ import Link from 'next/link';
 import {useCallback} from "react";
 import SEO from "../../../components/_common/seo";
 import useLoginStore from "../../../stores/loginStores";
-import {FindAndJoin, LoginWrap} from "./login.style";
+import {FindAndJoin, LoginWrap} from "../../../styles/login.style";
 import router from "next/router";
 import useInput from "../../../hooks/useInput"
 import InputComponent from "../../../components/_common/inputComponent";

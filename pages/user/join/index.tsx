@@ -1,6 +1,6 @@
 import SEO from "../../../components/_common/seo";
 import useInput from "../../../hooks/useInput";
-import {LoginWrap, JoinAs} from "../login/login.style";
+import {LoginWrap, JoinAs} from "../../../styles/login.style";
 import InputComponent from "../../../components/_common/inputComponent";
 import {useCallback, useState} from "react";
 import CommonModal from "../../../components/_modal/commonModal";

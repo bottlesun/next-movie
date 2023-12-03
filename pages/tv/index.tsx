@@ -1,6 +1,6 @@
 import SEO from "../../components/_common/seo";
 import useLogin from "../../hooks/useLogin";
-import {MovieComponent} from "../movie/movie.style";
+import {MovieComponent} from "../../styles/movie.style";
 import ContentsList from "../../components/_common/contentsList";
 
 

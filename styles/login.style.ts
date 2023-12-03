@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import {bgColor, boxShadow, mainBgColor} from "../../../styles/variable";
+import {bgColor, boxShadow, mainBgColor} from "./variable";
 
 export const LoginWrap = styled.section`
   height: 100vh;

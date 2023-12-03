@@ -3,7 +3,7 @@ import useToggle from "../../../hooks/useToggle";
 import {menuInterface} from "../../../interfaces/menu.interfaces";
 import useLoginStore from '../../../stores/loginStores'
 import {NavList} from "./navBar.style";
-import {useRouter} from "next/router";
+import {useRouter} from "next/dist/client/router";
 import React from "react";
 import UserInfoSet from "./userInfoSet";
 import UserLoginSet from "./userLoginSet";
