@@ -4,7 +4,6 @@ import {mainBgColor, bgColor} from "../../../styles/variable";
 export const SlideComponent = styled.article`
   width: 100%;
   margin-bottom: 50px;
-  color: #fff;
 
 
   .swiper {
